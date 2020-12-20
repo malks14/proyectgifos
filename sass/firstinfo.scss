@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.firstinfo h1 {
+    font-family: 'Montserrat-Bold', sans-serif;
+    font-size: 25px;
+    color: #572EE5;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 33px;
+    margin-left: 40px;
+    height: 99px;
+    width: 286px;
+    margin-top: -10px;
+}
+
+.gifos {
+    color: #50E3C2;
+}
+
+.firstinfo img {
+    height: 300px;
+    width: 300px;
+    margin-left: 40px;
+    margin-top: -70px;
+}
+
+.searchbar input {
+    background-image: url('../assets/icon-search.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+}
