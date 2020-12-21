@@ -18,16 +18,16 @@
             <div class="menuNavigation_logo">
                 <a href="https://www.acamica.com/"><img src="assets/logo-mobile.svg" alt="Gifo's logo"></a>
             </div>
-            <input type="checkbox" id="redirect">
-            <button class="menuNavigation_button">
-            <label for="redirect">
+            <!-- <input type="checkbox" id="redirect"> -->
+            <button class="menuNavigation_button" onclick="changeClass()">
+            <!-- <label for="redirect"> -->
                     <i class="fas fa-bars menuNavigation_buttonOpen"></i>
                     <i class="fas fa-times menuNavigation_buttonClose"></i>
-                </label>
+                <!-- </label> -->
             </button>
             
-            <ul class="menuNavigation_list">
-                <button onclick="myFunction()">Modo Nocturno</button>
+            <ul id="site-nav" class="menuNavigation_list">
+                <button onclick="darkMode()">Modo Nocturno</button>
                 <li><a href="#inicio">Modo Diurno</a> </li>
                 <li><a href="favoritos.html">Favoritos</a></li>
                 <li><a href="misgifos.html">Mis GIFOS</a></li>
@@ -47,5 +47,5 @@
         </section>
     </main>
 </body>
-<script src="nightmode.js"></script>
+<script src="app.js"></script>
 </html>

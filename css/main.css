@@ -51,7 +51,8 @@ header {
   box-sizing: border-box;
   z-index: 1;
   background: rgba(87, 46, 229, 0.9);
-  font-family: 'Montserrat', sans-serif; }
+  font-family: 'Montserrat', sans-serif;
+  overflow: hidden; }
   @media (min-width: 415px) {
     .menuNavigation_list {
       display: flex;
@@ -68,6 +69,9 @@ header {
       justify-content: flex-end;
       top: 20px;
       left: -50px; } }
+
+.site-nav-open {
+  height: 0; }
 
 .menuNavigation_list li {
   padding: 10px 0; }
@@ -95,21 +99,6 @@ header {
   text-decoration: line-through;
   letter-spacing: 0;
   line-height: 28px; }
-
-i.menuNavigation_buttonOpen {
-  display: none; }
-
-#redirect:checked + .menuNavigation_button label .menuNavigation_buttonOpen {
-  display: inline; }
-
-#redirect:checked + .menuNavigation_button label .menuNavigation_buttonClose {
-  display: none; }
-
-#redirect:checked + .menuNavigation_button + .menuNavigation_list {
-  display: none; }
-
-#redirect {
-  display: none; }
 
 body {
   margin: 0;
