@@ -4,6 +4,9 @@ body {
     box-sizing: border-box;
 }
 
+#main {
+    padding-bottom: 30px;
+}
 
 .firstinfo h1 {
     font-family: 'Montserrat-Bold', sans-serif;
@@ -29,7 +32,7 @@ body {
     margin-top: -70px;
 }
 
-.searchbar input {
+#searchbar input {
     background-image: url('../assets/icon-search.svg');
     background-repeat: no-repeat;
     background-position: right;
@@ -37,15 +40,43 @@ body {
     border-radius: 27px;
     padding: 15px 0;
     width: 330px;
-    text-align: center;
+    transform: translate(20px, -82px);
+}
+
+#searchbar input::placeholder {
+    padding: 10px 0 10px 50px;
     font-family: 'Roboto-Regular', sans-serif;
     font-size: 16px;
     color: #6B7989;
-    transform: translate(20px, -82px);
 }
 
 .dark-mode {
     background-color:#37383C;
-    color: white;
     transition: background-color .2s; // hacer un keyframe?
+}
+
+.dark-mode svg.icon path {
+    fill: #efefef;
   }
+
+
+.trendingGif h3 {
+    font-family: 'Montserrat-Bold', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    line-height: 25px;
+    color: #572EE5;
+    margin-top: -70px;
+}
+
+.trendingGif p {
+    font-family: 'Montserrat-Medium', sans-serif;
+    font-size: 14px;
+    color: #572EE5;
+    text-align: center;
+    line-height: 25px;
+    height: 50px;
+    width: 225px;
+    margin-top: -10px;
+    margin-left: 70px;
+}

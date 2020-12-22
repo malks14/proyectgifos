@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <header>
+    <header id="headerDark">
        
         <nav class="menuNavigation">
             <div class="menuNavigation_logo">
@@ -27,7 +27,7 @@
             </button>
             
             <ul id="site-nav" class="menuNavigation_list">
-                <button onclick="darkMode()">Modo Nocturno</button>
+                <li><a onclick="darkMode()">Modo Nocturno</a></li>
                 <li><a href="#inicio">Modo Diurno</a> </li>
                 <li><a href="favoritos.html">Favoritos</a></li>
                 <li><a href="misgifos.html">Mis GIFOS</a></li>
@@ -40,9 +40,22 @@
             <div class="firstinfo">
                 <h1>Inspírate, busca, guarda, y crea los mejores <span class="gifos">GIFOS</span></h1>
                 <img src="assets/ilustra_header.svg" alt="gifos sub logo">
-                <div class="searchbar">
+                <div id="searchbar">
                     <input type="text" placeholder="Busca GIFOS y más">
+                    
                 </div>
+            </div>
+
+            <div class="trendingGif">
+            <h3>Trending:</h3>
+            <p>Reactions, Entertainment, Sports, Stickers, Artists</p>
+            </div>
+        </section>
+
+        <section id="trending">
+            <div class="trendinginfo">
+                <h2>Trending GIFOS</h2>
+                <p>Mira los últimos GIFOS de nuestra comunidad</p>
             </div>
         </section>
     </main>
