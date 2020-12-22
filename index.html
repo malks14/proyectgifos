@@ -28,7 +28,7 @@
             
             <ul id="site-nav" class="menuNavigation_list">
                 <li><a onclick="darkMode()">Modo Nocturno</a></li>
-                <li><a href="#inicio">Modo Diurno</a> </li>
+                <li><a href="#inicio" onclick="dayTrending()">Modo Diurno</a> </li>
                 <li><a href="favoritos.html">Favoritos</a></li>
                 <li><a href="misgifos.html">Mis GIFOS</a></li>
             </ul>
@@ -41,8 +41,7 @@
                 <h1>Inspírate, busca, guarda, y crea los mejores <span class="gifos">GIFOS</span></h1>
                 <img src="assets/ilustra_header.svg" alt="gifos sub logo">
                 <div id="searchbar">
-                    <input type="text" placeholder="Busca GIFOS y más">
-                    
+                    <input type="text" placeholder="Busca GIFOS y más" class="searchicon">
                 </div>
             </div>
 
@@ -52,13 +51,29 @@
             </div>
         </section>
 
-        <section id="trending">
+        <section id="trending" class="day-modeTrending">
             <div class="trendinginfo">
                 <h2>Trending GIFOS</h2>
-                <p>Mira los últimos GIFOS de nuestra comunidad</p>
+                <p>Mira los <span class="gifodown">últimos</span> GIFOS de nuestra comunidad.</p>
             </div>
         </section>
     </main>
+    
+    <footer id="footer">
+        <div class="footercont">
+        
+            <div class="iconsfoot">
+                <p>Compartir en:</p>
+                <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="textFooter">
+            <p>&copy; GIFOS 2020 All Rights Reserved.</p>
+            </div>
+            
+        </div>
+    </footer>
 </body>
 <script src="app.js"></script>
 </html>

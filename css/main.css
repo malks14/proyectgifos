@@ -128,10 +128,12 @@ body {
   margin-left: 40px;
   margin-top: -70px; }
 
-#searchbar input {
+.searchicon {
   background-image: url("../assets/icon-search.svg");
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: 290px 14px; }
+
+#searchbar input {
   border: 1px solid #572EE5;
   border-radius: 27px;
   padding: 15px 0;
@@ -146,10 +148,8 @@ body {
 
 .dark-mode {
   background-color: #37383C;
+  color: white;
   transition: background-color .2s; }
-
-.dark-mode svg.icon path {
-  fill: #efefef; }
 
 .trendingGif h3 {
   font-family: 'Montserrat-Bold', sans-serif;
@@ -170,12 +170,18 @@ body {
   margin-top: -10px;
   margin-left: 70px; }
 
+.trendinginfo {
+  height: 430px;
+  width: 375px; }
+
 .trendinginfo h2 {
   font-family: 'Montserrat-Bold', sans-serif;
   font-size: 20px;
   color: #572EE5;
   text-align: center;
-  line-height: 30px; }
+  line-height: 30px;
+  margin-top: 0;
+  padding-top: 50px; }
 
 .trendinginfo p {
   font-family: 'Roboto-Regular', sans-serif;
@@ -184,6 +190,50 @@ body {
   text-align: center;
   line-height: 23px;
   height: 46px;
-  width: 333px; }
+  width: 333px;
+  margin-bottom: 0; }
+
+.gifodown::after {
+  content: "\a";
+  white-space: pre; }
+
+.day-modeTrending {
+  background: #F3F5F8;
+  transition: background-color .2s; }
+
+.dark-modeTrending {
+  background: #222326;
+  color: white;
+  transition: background-color .2s; }
+
+.footercont {
+  height: 196px;
+  width: 375px;
+  border-bottom: #572EE5 5px solid; }
+
+.iconsfoot p {
+  font-family: 'Roboto-Regular', sans-serif;
+  font-size: 15px;
+  color: #000000;
+  letter-spacing: 0;
+  text-align: center;
+  padding-top: 50px;
+  margin-top: 0px; }
+
+.iconsfoot i {
+  text-decoration: none;
+  color: #CDD6E0;
+  padding-top: 15px;
+  transform: translate(150px, 0px);
+  padding-right: 10px; }
+
+.textFooter {
+  font-family: 'Roboto-Regular', sans-serif;
+  font-size: 14px;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: 20px;
+  margin-left: 70px;
+  padding-top: 30px; }
 
 /*# sourceMappingURL=main.css.map */
