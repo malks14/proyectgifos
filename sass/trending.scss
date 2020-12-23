@@ -5,6 +5,9 @@
     @media (min-width: 376px) {
         margin-left: 180px;
     }
+    @media (min-width: 769px) {
+        width: 100%;
+    }
 }
 
 .trendinginfo h2 {
@@ -15,6 +18,10 @@
     line-height: 30px;
     margin-top: 0;
     padding-top: 50px;
+
+    @media (min-width: 769px) {
+        margin-left: -400px;
+    }
 }
 
 .trendinginfo p {
@@ -26,8 +33,13 @@
     height: 46px;
     width: 333px;
     margin-bottom: 0;
+
     @media (min-width: 376px) {
         margin-left: 40px;
+    }
+
+    @media (min-width: 769px) {
+        margin-left: 350px;
     }
 }
 
