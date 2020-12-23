@@ -1,12 +1,20 @@
 header {
     height: 95px;
     width: 100%;
+    @media (min-width: 376px) {
+        border-top: #572EE5 4px solid;
+    }
+    
 }
 .menuNavigation {
     position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    @media (min-width: 376px) {
+        margin-right: 10px;
+    }
 }
 
 .menuNavigation_logo {
@@ -28,16 +36,6 @@ header {
     cursor: pointer;
     outline: none;
     
-
-    @media (min-width: 321px) {
-        display: flex;
-        justify-content: flex-end;
-        margin-top: 20px;
-    }
-
-    @media (min-width: 376px) {
-        margin-right: 10px;
-    }
 
     @media (min-width: 415px) {
         display: none;
@@ -69,17 +67,19 @@ header {
     @media (min-width: 415px) {
         display: flex;
         flex-direction: row;
-        background: #ffff;
+        background: none;
         justify-content: flex-end;
         top: 10px;
         left: 20px;
+        margin-left: -90px;
+        padding-right: -40px;
         
     }
 
     @media (min-width: 769px) {
         display: flex;
         flex-direction: row;
-        background: #ffff;
+        background: none;
         justify-content: flex-end;
         top: 20px;
         left: -50px;
@@ -105,44 +105,27 @@ header {
     font-family: 'Montserrat-Bold', sans-serif;
 
     @media (min-width: 415px) {
-        color: #060A24;
+        color: #572EE5;
         padding-left: 1px;
-        margin-right: 40px;
+        margin-right: 30px;
+        font-size: 13px;
         
         
         
     }
 }
 
-.menuNavigation_list li a:hover {
-    color: #00F3BB;
+.dark-mode {
+    background-color:#37383C;
+    color: #efefef;
+    transition: background-color .2s; // hacer un keyframe?
 }
 
-.menuNavigation_list li a:active {
-    font-size: 16px;
-    color: rgba(6,10,36,0.56);
-    text-decoration: line-through;
-    letter-spacing: 0;
-    line-height: 28px;
+.myGif {
+    display: none;
+
+    @media (min-width: 376px) {
+        display: inherit;
+        margin-top: 5px;
+    }
 }
-
-// i.menuNavigation_buttonOpen {
-//     display: none;
-// }
-
-// #redirect:checked + .menuNavigation_button label .menuNavigation_buttonOpen{
-//     display: inline;
-// }
-
-// #redirect:checked + .menuNavigation_button label .menuNavigation_buttonClose{
-//     display: none;
-// }
-
-// #redirect:checked + .menuNavigation_button + .menuNavigation_list {
-//     display: none;
-// }
-
-// #redirect {
-//     display: none;
-// }
-

@@ -1,6 +1,10 @@
 .trendinginfo {
     height: 430px;
     width: 375px;
+    
+    @media (min-width: 376px) {
+        margin-left: 180px;
+    }
 }
 
 .trendinginfo h2 {
@@ -22,11 +26,18 @@
     height: 46px;
     width: 333px;
     margin-bottom: 0;
+    @media (min-width: 376px) {
+        margin-left: 40px;
+    }
 }
 
 .gifodown::after {
     content: "\a";
     white-space: pre;
+
+    @media (min-width: 376px) {
+        display: inline-block;
+    }
 }
 
 

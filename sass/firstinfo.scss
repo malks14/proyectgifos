@@ -19,6 +19,14 @@ body {
     height: 99px;
     width: 286px;
     margin-top: -10px;
+
+    @media (min-width: 415px) {
+        height: 100px;
+        margin-left: 180px;
+        margin-top: 20px;
+        width: 414px;
+
+    }
 }
 
 .gifos {
@@ -30,12 +38,23 @@ body {
     width: 300px;
     margin-left: 40px;
     margin-top: -70px;
+
+    @media (min-width: 376px) {
+        margin-left: 220px;
+
+        
+    }
 }
 
 .searchicon {
     background-image: url('../assets/icon-search.svg');
     background-repeat: no-repeat;
     background-position: 290px 14px;
+
+    @media (min-width: 376px) {
+        background-position: 350px 14px;
+        
+    }
 }
 
 
@@ -45,6 +64,18 @@ body {
     padding: 15px 0;
     width: 330px;
     transform: translate(20px, -82px);
+
+    @media (min-width: 376px) {
+        margin-left: 150px;
+        width: 400px;
+        
+    }
+
+    @media (min-width: 769px) {
+        margin-left: 10px;
+        width: 551px;
+        
+    }
 }
 
 #searchbar input::placeholder {
@@ -81,4 +112,10 @@ body {
     width: 225px;
     margin-top: -10px;
     margin-left: 70px;
+
+    @media (min-width: 376px) {
+       margin-left: 190px;
+        width: 402px;
+    }
+    
 }

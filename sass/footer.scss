@@ -1,8 +1,22 @@
 .footercont {
-    height: 196px;
+    height: 170px;
     width: 375px;
     border-bottom: #572EE5 5px solid;
+
+    @media (min-width: 376px) {
+        margin-top: -40px;
+        width: 768px;
+        display: flex;
+        justify-content: space-between;
+       
+    }
     
+}
+
+.iconsfoot {
+    @media (min-width: 376px) {
+       margin-left: 30px;
+    }
 }
 
 .iconsfoot p {
@@ -16,13 +30,15 @@
 }
 
 
-
 .iconsfoot i {
     text-decoration:none;
     color: #CDD6E0;
     padding-top: 15px;
     transform: translate(150px, 0px);
     padding-right: 10px;
+    @media (min-width: 376px) {
+        transform: translate(120px, -45px);
+    }
 }
 
 .textFooter {
@@ -33,4 +49,15 @@
     line-height: 20px;
     margin-left: 70px;
     padding-top: 30px;
+
+    @media (min-width: 376px) {
+        margin-right: 30px;
+     }
+}
+
+
+.iconsfoot a i:nth-child(0) {
+    @media (min-width: 376px) {
+        color: #572EE5;
+     }
 }

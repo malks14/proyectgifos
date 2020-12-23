@@ -5,9 +5,15 @@ function darkMode() {
     darkMain();
     darkTrending();
     darkFooter();
+    
+   
 }
 
 //dayMode
+function dayMode() {
+    dayTrending();
+    
+}
 
 function dayTrending() {
     var element = document.getElementById('trending');
@@ -28,6 +34,8 @@ function darkMain() {
 function darkHeader() {
     var elementTwo = document.getElementById('headerDark')
     elementTwo.classList.toggle("dark-mode")
+
+    
 }
 
 function darkFooter() {
@@ -42,3 +50,13 @@ function changeClass() {
         siteNav.classList.toggle('site-nav-open');
     
 }
+
+// changinli
+
+
+    // window.onload = function changeLi(){
+    // document.getElementById("dayLi").innerHTML = "Modo Diurno";
+
+    // window.onload = function changeLi(){
+    // document.getElementById("dayLi").innerHTML = "Modo Diurno";
+
