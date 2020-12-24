@@ -64,3 +64,9 @@
     color: white;
     transition: background-color .2s; // hacer un keyframe?
 }
+
+#dayLi {
+    @media (min-width: 769px) {
+        cursor: pointer;
+    }
+}

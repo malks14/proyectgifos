@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Gifos</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://kit.fontawesome.com/3c919e8baa.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="headerDark">
+       
+        <nav class="menuNavigation">
+            <div class="menuNavigation_logo">
+                <a href="https://www.acamica.com/"><img src="assets/logo-mobile.svg" alt="Gifo's logo" class="logoMobile"></a>
+                <a href="https://www.acamica.com/"><img src="assets/logo-desktop.svg" alt="Gifo's logo" class="logoDesktop"></a>
+            </div>
+           
+            <button class="menuNavigation_button" onclick="changeClass()">
+           
+                    <i class="fas fa-bars menuNavigation_buttonOpen"></i>
+                    <i class="fas fa-times menuNavigation_buttonClose"></i>
+                
+            </button>
+            
+            <ul id="site-nav" class="menuNavigation_list">
+                <li ><a id="dayLi" onclick="darkMode()"; onclick="dayMode()">Modo Nocturno</a></li>
+                <li><a href="favoritos.html">Favoritos</a></li>
+                <li><a href="misgifos.html">Mis GIFOS</a></li>
+            </ul>
+            <div class="myGif">
+            <a href="misgifos.html"><img src="assets/button-crear-gifo.svg" alt="Button for creating own gifs"></a>
+            </div>
+        </nav>
+</body>
+</html>
