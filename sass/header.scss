@@ -128,6 +128,7 @@ nav {
 }
 
 .dark-mode {
+    
     background-color:#37383C;
     
     transition: background-color .2s; 
@@ -145,6 +146,15 @@ nav {
         }
     }
 
+    .searchicon {
+        background-color: white;
+    }
+    #searchbar input {
+        border: 1px solid #FFFFFF;
+        border-radius: 27px;
+        background-color: #37383C;
+    }
+
     @media (max-width: 768px) {
         .nav-links {
             background-color: #000000;
@@ -157,6 +167,31 @@ nav {
 
     .logoDarkMobile {
         display: block;
+    }
+
+    .trendingGif {
+        h3,
+        p{
+            color: #ffffff;
+        }
+    }
+
+    .trendinginfo {
+        h2,
+        p{
+            color: #ffffff;
+        }
+    }
+
+    .iconsfoot,
+    .textFooter {
+        p {
+            color: white;
+        }
+    }
+
+    .footercont {
+        border-bottom: #000000 5px solid;
     }
 }
 

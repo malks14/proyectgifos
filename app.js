@@ -44,9 +44,12 @@ function darkFooter() {
 function darkBtn() {
     var element = document.getElementById('burger');
     element.classList.toggle("dark-mode");
-    
 }
 
+function darkSearch() {
+    var element = document.getElementById('searchbar');
+    element.classList.toggle("dark-mode");
+}
 //menuhamburger
 
 function changeClass() {

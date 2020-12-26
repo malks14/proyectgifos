@@ -104,6 +104,12 @@ nav {
   .dark-mode .burger .line2,
   .dark-mode .burger .line3 {
     background-color: #ffffff; }
+  .dark-mode .searchicon {
+    background-color: white; }
+  .dark-mode #searchbar input {
+    border: 1px solid #FFFFFF;
+    border-radius: 27px;
+    background-color: #37383C; }
   @media (max-width: 768px) {
     .dark-mode .nav-links {
       background-color: #000000; } }
@@ -111,6 +117,17 @@ nav {
     display: none; }
   .dark-mode .logoDarkMobile {
     display: block; }
+  .dark-mode .trendingGif h3,
+  .dark-mode .trendingGif p {
+    color: #ffffff; }
+  .dark-mode .trendinginfo h2,
+  .dark-mode .trendinginfo p {
+    color: #ffffff; }
+  .dark-mode .iconsfoot p,
+  .dark-mode .textFooter p {
+    color: white; }
+  .dark-mode .footercont {
+    border-bottom: #000000 5px solid; }
 
 .myGif {
   display: none; }
@@ -213,11 +230,6 @@ body {
   font-family: 'Roboto-Regular', sans-serif;
   font-size: 16px;
   color: #6B7989; }
-
-.dark-mode {
-  background-color: #37383C;
-  color: white;
-  transition: background-color .2s; }
 
 .trendingGif h3 {
   font-family: 'Montserrat-Bold', sans-serif;
