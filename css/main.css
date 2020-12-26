@@ -315,6 +315,9 @@ body {
   #dayLi {
     cursor: pointer; } }
 
+.display_gif {
+  display: flex; }
+
 .footercont {
   height: 180px;
   width: 375px;
