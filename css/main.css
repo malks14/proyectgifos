@@ -10,69 +10,74 @@ nav {
   min-height: 8vh;
   z-index: 1; }
 
-.logo {
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  font-size: 20px; }
-
 .nav-links {
   display: flex;
   justify-content: space-around;
-  width: 30%;
-  /*aca se puede jugar que tan separado se quiere los links*/ }
+  width: 40%;
+  font-family: 'Montserrat-Bold', sans-serif; }
 
 .nav-links li {
   list-style: none; }
 
 .nav-links a {
-  color: white;
+  color: #572EE5;
   text-decoration: none;
   letter-spacing: 3px;
-  font-size: 14px; }
+  font-size: 13px;
+  font-weight: bold; }
 
 .burger {
   display: none;
   cursor: pointer; }
 
-/* hace las 3 lineas horizontales */
 .burger div {
   width: 25px;
   height: 3px;
   background-color: #572EE5;
   margin: 5px;
-  transition: all 0.3s ease;
-  /*animacion de la X*/ }
+  transition: all 0.3s ease; }
 
 @media screen and (max-width: 1024px) {
   .nav-links {
     width: 60%; } }
 @media screen and (max-width: 768px) {
   body {
-    overflow-x: hidden;
-    /*no se puede scrollear a la derecha*/ }
+    overflow-x: hidden; }
 
   .nav-links {
-    position: fixed;
+    position: absolute;
     right: 0px;
-    /* para donde posicionar la lista*/
-    height: 92vh;
+    height: 484px;
     top: 8vh;
-    background-color: #572EE5;
+    background-color: rgba(87, 46, 229, 0.9);
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    /* aca jugar cuan ancho se quiere el list*/
     transform: translateX(100%);
     transition: transform 0.5s ease-in;
-    /*opcional si se quiere que se oculte de una o no*/ }
+    justify-content: flex-start; }
+
+  .nav-links li {
+    margin-bottom: 10px;
+    margin-top: 30px; }
+
+  .nav-links a {
+    color: white; }
+
+  .nav-links a::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 40px;
+    background-color: #ffffff;
+    margin: 10px auto;
+    margin-top: 20px; }
 
   .burger {
     display: block; } }
 .nav-active {
-  transform: translateX(0%);
-  /*es para que cuando se toque el boton, vuelva la lista*/ }
+  transform: translateX(0%); }
 
 @keyframes navLinkFade {
   from {
@@ -81,7 +86,6 @@ nav {
   to {
     opacity: 1;
     transform: translateX(0); } }
-/* para hacer la cruz en el boton burger */
 .toggle .line1 {
   transform: rotate(-45deg) translate(-5px, 6px); }
 
@@ -93,8 +97,20 @@ nav {
 
 .dark-mode {
   background-color: #37383C;
-  color: #efefef;
   transition: background-color .2s; }
+  .dark-mode .firstinfo h1 {
+    color: white; }
+  .dark-mode .burger .line1,
+  .dark-mode .burger .line2,
+  .dark-mode .burger .line3 {
+    background-color: #ffffff; }
+  @media (max-width: 768px) {
+    .dark-mode .nav-links {
+      background-color: #000000; } }
+  .dark-mode .logoMobile {
+    display: none; }
+  .dark-mode .logoDarkMobile {
+    display: block; }
 
 .myGif {
   display: none; }
@@ -106,6 +122,9 @@ nav {
 @media (min-width: 769px) {
   .logoMobile {
     display: none; } }
+
+.logoDarkMobile {
+  display: none; }
 
 .logoDesktop {
   display: none; }

@@ -5,8 +5,7 @@ function darkMode() {
     darkMain();
     darkTrending();
     darkFooter();
-    
-   
+    darkBtn();
 }
 
 //dayMode
@@ -34,13 +33,18 @@ function darkMain() {
 function darkHeader() {
     var elementTwo = document.getElementById('headerDark')
     elementTwo.classList.toggle("dark-mode")
-
     
 }
 
 function darkFooter() {
     var element = document.getElementById('footer');
     element.classList.toggle("dark-mode");
+}
+
+function darkBtn() {
+    var element = document.getElementById('burger');
+    element.classList.toggle("dark-mode");
+    
 }
 
 //menuhamburger
@@ -51,7 +55,7 @@ function changeClass() {
     
 }
 
-const navSlide = () => {     //asi es una funcion vacia
+const navSlide = () => {     
     const burger =  document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
     const navLinks = document.querySelectorAll('.nav-links li');
@@ -61,16 +65,9 @@ const navSlide = () => {     //asi es una funcion vacia
     burger.addEventListener('click', ()=>{ //funcion para que el boton tome la clase de active
         nav.classList.toggle('nav-active');
 
-     //Animacion li (links)
-    // navLinks.forEach((link, index) => {  //funcion para que quede siempre la animacion de li por segundos
-    //     if(link.style.animation) {
-    //         link.style.animation = ''
-    //     } else {
-    //      link.style.animation = `navLinksFade 0.5s ease forwards ${index / 7 + 1.5 }s`; //animacion para que los li aparezcan de a poco
-    //     }
          
      
-    //  });
+     
      //animacion burger
      burger.classList.toggle('toggle');
 
@@ -78,5 +75,5 @@ const navSlide = () => {     //asi es una funcion vacia
    
 }
 
-navSlide(); //para llamar a la funcion
+navSlide(); 
 
