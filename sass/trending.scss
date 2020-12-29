@@ -71,6 +71,15 @@
     }
 }
 
+.trending_gif_display {
+    width: 375px;
+}
+
+.trending_gif {
+   display: flex;
+   overflow: scroll;
+}
+
 .display_gif {
-    display: flex;
+padding: 1em;
 }

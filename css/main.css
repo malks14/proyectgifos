@@ -45,7 +45,7 @@ nav {
     overflow-x: hidden; }
 
   .nav-links {
-    position: absolute;
+    position: fixed;
     right: 0px;
     height: 484px;
     top: 8vh;
@@ -315,8 +315,15 @@ body {
   #dayLi {
     cursor: pointer; } }
 
+.trending_gif_display {
+  width: 375px; }
+
+.trending_gif {
+  display: flex;
+  overflow: scroll; }
+
 .display_gif {
-  display: flex; }
+  padding: 1em; }
 
 .footercont {
   height: 180px;
