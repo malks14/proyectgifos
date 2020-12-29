@@ -32,9 +32,9 @@ fetch(path).then(function(res) {
     console.log(err.message)
 })
 
-//Trending Terms
+//Trending Reactions
 
-const pathTerm = `https://api.giphy.com/v1/trending/searches?api_key=${apikey}`
+const pathTerm = `https://api.giphy.com/v1/gifs/categories?api_key=${apikey}`
 
 fetch(pathTerm).then(function(res) {
     return res.json()
@@ -43,12 +43,13 @@ fetch(pathTerm).then(function(res) {
     const trendingEl = document.getElementById('trendingTerms')
     let trendingHTML = ''
    
-
-    json.data.forEach(function(obj) {
-        console.log(obj)
-        const title = obj
+   
+    json.data.slice(0,5).forEach(function(obj) {
         
-        trendingHTML += `[${title}]`
+        console.log(obj.name)
+        const title = obj.name
+        
+        trendingHTML += `<p>${title}</p>`
         
 
     });

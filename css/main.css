@@ -325,6 +325,9 @@ body {
 .display_gif {
   padding: 1em; }
 
+#trendingTerms {
+  display: inline-block; }
+
 .footercont {
   height: 180px;
   width: 375px;
