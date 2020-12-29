@@ -34,7 +34,7 @@ fetch(path).then(function(res) {
 
 //Trending Reactions
 
-const pathTerm = `https://api.giphy.com/v1/gifs/categories?api_key=${apikey}`
+const pathTerm = `https://api.giphy.com/v1/trending/searches?api_key=${apikey}`
 
 fetch(pathTerm).then(function(res) {
     return res.json()
@@ -46,10 +46,10 @@ fetch(pathTerm).then(function(res) {
    
     json.data.slice(0,5).forEach(function(obj) {
         
-        console.log(obj.name)
-        const title = obj.name
+        console.log(obj)
+        const title = obj
         
-        trendingHTML += `<p>${title}</p>`
+        trendingHTML += `<p class="categories">${title}</p>`
         
 
     });

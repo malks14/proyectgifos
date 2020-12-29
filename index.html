@@ -51,9 +51,17 @@
                 <h1>Inspírate, busca, guarda, y crea los mejores <span class="gifos">GIFOS</span></h1>
                 <img src="assets/ilustra_header.svg" alt="gifos sub logo">
 
-                <form>
+                <form id="search-form">
                     <div id="searchbar">
-                        <input type="text" placeholder="Busca GIFOS y más" class="searchicon">
+                        <div class="search-input">
+                                <input id="search-input" type="text" placeholder="Busca GIFOS y más">
+                                <div class="autocomplete-box">
+                                   
+                                </div>
+                            <div class="iconsearch">
+                                <button class="btn-icon"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -61,6 +69,9 @@
             <div class="trendingGif">
             <h3>Trending:</h3>
             <div id="trendingTerms"></div>
+            </div>
+            <div class="containerSearch">
+                <div id="searchResults"></div>
             </div>
 
             
@@ -71,10 +82,11 @@
             <div class="trendinginfo">
                 <h2>Trending GIFOS</h2>
                 <p>Mira los <span class="gifodown">últimos</span> GIFOS de nuestra comunidad.</p>
+                <div class="trending_gif_display">
+                    <div id="trending_gif" class="trending_gif"></div>
+                </div>
             </div>
-            <div class="trending_gif_display">
-                <div id="trending_gif" class="trending_gif"></div>
-            </div>
+            
         </section>
     </main>
     
@@ -97,4 +109,6 @@
 </body>
 <script src="/js/app.js"></script>
 <script src="/js/trendingGif.js"></script>
+<script src="/js/searchbar.js"></script>
+<script src="/js/suggestions.js"></script>
 </html>

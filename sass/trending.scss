@@ -73,18 +73,21 @@
 
 .trending_gif_display {
     width: 375px;
+
+    @media (min-width: 376px) {
+        width: 100%;
+    }
 }
 
 .trending_gif {
    display: flex;
    overflow: scroll;
+
+   @media (min-width: 376px) {
+    width: 100%;
+   }
 }
 
 .display_gif {
-padding: 1em;
-}
-
-#trendingTerms {
-    display: inline-block;
-
+    padding: 1em;
 }
