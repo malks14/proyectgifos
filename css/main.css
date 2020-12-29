@@ -253,27 +253,10 @@ body {
       margin-left: 420px;
       width: 551px; } }
 
-.search-input .autcomplete-box {
-  padding: 10px 8px;
-  max-height: 280px;
-  overflow-y: auto; }
-
-.search-input.active .autcomplete-box {
-  padding: 10px 8px;
-  opacity: 1;
-  pointer-events: auto; }
-
-.autcomplete-box li {
-  list-style: none;
-  padding: 8px 12px;
-  width: 100%;
-  border-radius: 3px;
-  display: none; }
-
 .search-input .iconsearch {
   line-height: 55px;
   position: absolute;
-  right: 30px;
+  right: 40px;
   top: 338px;
   text-align: center; }
   @media (min-width: 376px) {
@@ -288,7 +271,11 @@ body {
   padding: 12px 16px;
   font-size: 20px;
   cursor: pointer;
-  margin: 0; }
+  padding: 0; }
+
+.btn-icon:focus {
+  outline: none;
+  border: none; }
 
 .containerSearch {
   width: calc(156px * 2+ 3em);
