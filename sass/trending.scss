@@ -3,11 +3,19 @@
     width: 375px;
     
     @media (min-width: 376px) {
-        margin-left: 180px;
+        
+        width: 100%;
     }
     @media (min-width: 769px) {
         width: 100%;
     }
+}
+
+.trendinginfo p {
+    @media (min-width: 376px) {
+      transform: translate(190px, 0);
+    }
+    
 }
 
 .trendinginfo h2 {
@@ -33,6 +41,7 @@
     height: 46px;
     width: 333px;
     margin-bottom: 0;
+    margin-left: 20px;
 
     @media (min-width: 376px) {
         margin-left: 40px;
@@ -49,25 +58,6 @@
 
     @media (min-width: 376px) {
         display: inline-block;
-    }
-}
-
-
-
-.day-modeTrending {
-    background: #F3F5F8;
-    transition: background-color .2s;
-}
-
-.dark-modeTrending {
-    background: #222326;
-    color: white;
-    transition: background-color .2s; // hacer un keyframe?
-}
-
-#dayLi {
-    @media (min-width: 769px) {
-        cursor: pointer;
     }
 }
 
@@ -90,4 +80,13 @@
 
 .display_gif {
     padding: 1em;
+    height: 187px;
+    width: 243px;
+    margin-left: 15px;
+    margin-top: 25px;
+
+    @media (min-width: 769px) {
+        height: 275px;
+        width: 357px;
+    }
 }

@@ -11,7 +11,13 @@ function darkMode() {
 //dayMode
 function dayMode() {
     dayTrending();
+    dayHeader();
     
+}
+
+function dayHeader() {
+    var element = document.getElementById('headerDark');
+    element.classList.toggle("day-mode");
 }
 
 function dayTrending() {

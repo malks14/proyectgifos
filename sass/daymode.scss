@@ -1,0 +1,14 @@
+.day-modeTrending {
+    background: #F3F5F8;
+    transition: background-color .2s;
+
+    
+}
+
+.day-mode {
+    .nav-links a {
+        @media (min-width: 769) {
+            color: #572EE5;
+        }
+    }
+}

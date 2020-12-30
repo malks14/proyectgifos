@@ -1,0 +1,113 @@
+.dark-mode {
+    //darkmode general
+    background-color:#37383C;
+    transition: background-color .2s; 
+
+    .nav-links {
+        a {
+            @media (min-width: 769) {
+                color: #fff;
+            }
+        }    
+    }
+
+    .firstinfo {
+        h1 {
+            color: white;
+
+            @media (min-width: 376px) {
+                margin-top: -1px;
+            }
+        }
+    }
+
+    .search-input .iconsearch {
+
+        @media (min-width: 376px) {
+            right: 221px;
+            top: 351px;
+            
+        }
+    }
+
+    .burger {
+        .line1,
+        .line2,
+        .line3 {
+            background-color: #ffffff;
+        }
+    }
+
+    .btn-icon {
+        color: white;
+    }
+    #searchbar input {
+        border: 1px solid #FFFFFF;
+        border-radius: 27px;
+        background-color: #37383C;
+    }
+
+    @media (max-width: 768px) {
+        .nav-links {
+            background-color: #000000;
+        }
+    }
+
+    .logoMobile{
+        display:none;
+    }
+
+    .logoDarkMobile {
+        display: block;
+        @media (min-width: 769px) {
+            display: none;
+        }
+    }
+
+    .logoDesktop{
+        display:none;
+    }
+
+    .logoDarkDesktop {
+        display: none;
+        @media (min-width: 769px) {
+            display: block;
+        }
+        
+    }
+
+    .trendingGif {
+        h3,
+        p{
+            color: #ffffff;
+        }
+    }
+
+    
+
+    .iconsfoot,
+    .textFooter {
+        p {
+            color: white;
+        }
+    }
+
+    .footercont {
+        border-bottom: #000000 5px solid;
+    }
+}
+
+//Trending Section
+.dark-modeTrending {
+    .trendinginfo{
+        background: #222326;
+        color: white;
+        transition: background-color .2s; // hacer un keyframe?
+    }   
+    .trendinginfo {
+        h2,
+        p{
+            color: #ffffff;
+        }
+    }
+}

@@ -12,6 +12,36 @@ nav {
     z-index: 1;
 }
 
+.menuNavigation {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 95px;
+    width: 100%;
+
+    @media (min-width: 376px) {
+        margin-right: 10px;
+    }
+
+    @media (min-width: 769px) {
+        margin-right: 150px;
+    }
+}
+
+.menuNavigation_logo {
+   height: 48.8px;
+   width: 48.8px;
+   margin-left: 10px;
+   margin-bottom: 30px;
+    
+
+    @media (min-width: 376px) {
+        left: 20px;
+        top: 10px
+
+    }
+}
 
 .nav-links {
     display: flex;
@@ -26,7 +56,7 @@ nav {
     
 }
 .nav-links a {
-    color: #572EE5;
+    
     text-decoration: none;
     letter-spacing: 3px;
     font-size: 13px;
@@ -37,6 +67,7 @@ nav {
 .burger {
     display: none;
     cursor: pointer;
+    margin-bottom: 30px;
 }
 
 .burger div {
@@ -47,11 +78,6 @@ nav {
     transition: all 0.3s ease; 
 }
 
-@media screen and (max-width: 1024px) {
-    .nav-links {
-        width: 60%;
-    }
-}
 
 @media screen and (max-width: 768px) {
     body {
@@ -127,95 +153,21 @@ nav {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
-.dark-mode {
-    
-    background-color:#37383C;
-    
-    transition: background-color .2s; 
-    .firstinfo {
-        h1 {
-            color: white;
-        }
-    }
-
-    .burger {
-        .line1,
-        .line2,
-        .line3 {
-            background-color: #ffffff;
-        }
-    }
-
-    .searchicon {
-        background-color: white;
-    }
-    #searchbar input {
-        border: 1px solid #FFFFFF;
-        border-radius: 27px;
-        background-color: #37383C;
-    }
-
-    @media (max-width: 768px) {
-        .nav-links {
-            background-color: #000000;
-        }
-    }
-
-    .logoMobile{
-        display:none;
-    }
-
-    .logoDarkMobile {
-        display: block;
-    }
-
-    .trendingGif {
-        h3,
-        p{
-            color: #ffffff;
-        }
-    }
-
-    .trendinginfo {
-        h2,
-        p{
-            color: #ffffff;
-        }
-    }
-
-    .iconsfoot,
-    .textFooter {
-        p {
-            color: white;
-        }
-    }
-
-    .footercont {
-        border-bottom: #000000 5px solid;
-    }
-}
-
-
-
 .myGif {
     display: none;
 
-    @media (min-width: 376px) {
+    @media (min-width: 769px) {
         display: block;
         margin-top: 5px;
         
     }
 }
 
-
+//logos
 .logoMobile {
     @media (min-width: 769px) {
         display: none;
     }
-}
-
-.logoDarkMobile {
-    display: none;
 }
 
 .logoDesktop {
@@ -225,5 +177,13 @@ nav {
         display: block;
         cursor: pointer;
     }
+}
 
+.logoDarkMobile {
+    display: none;
+}
+
+
+.logoDarkDesktop {
+    display: none;
 }
