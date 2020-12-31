@@ -2,24 +2,24 @@
 
 //dayMode
 
-// const dayMode = () => {
-//     const elementHeader = document.getElementById('headerDark');
-//     const elementTrending = document.getElementById('trending');
+const dayMode = () => {
+    const elementHeader = document.getElementById('headerDark');
+    const elementTrending = document.getElementById('trending');
 
-//     elementHeader.addEventListener('click', () => {
-//         elementHeader.classList.toggle("day-mode");
-//     });
+    elementHeader.addEventListener('click', () => {
+        elementHeader.classList.toggle("day-mode");
+    });
 
-//     elementTrending.addEventListener('click', () => {
-//         elementTrending.classList.toggle("day-mode");
-//     });
-// }
-// dayMode();
+    elementTrending.addEventListener('click', () => {
+        elementTrending.classList.toggle("day-mode");
+    });
+}
+dayMode();
 
 // darkMode
 
-const darkMode = (d) => {
-    let d = document.getElementById('cambio');
+const darkMode = () => {
+    
     const elementTrending = document.getElementById('trending');
     const elementHeader = document.getElementById('headerDark');
     const elementTrending = document.getElementById('trending');
