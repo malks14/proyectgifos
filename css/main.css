@@ -271,6 +271,9 @@ nav {
 .containerSearch {
   width: calc(156px * 2+ 3em);
   margin: auto; }
+  @media (min-width: 769px) {
+    .containerSearch {
+      width: calc(200px * 4 + 3em); } }
 
 .display_search {
   height: 120px;
@@ -281,6 +284,10 @@ nav {
   columns: 2;
   column-gap: 4px;
   margin-left: 22px; }
+  @media (min-width: 769px) {
+    #searchResults {
+      columns: 4;
+      column-gap: 1em; } }
 
 .trendinginfo {
   height: 430px;

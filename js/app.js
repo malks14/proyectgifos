@@ -1,73 +1,68 @@
-// aggregate toggle functions
 
-function darkMode() {
-    darkHeader();
-    darkMain();
-    darkTrending();
-    darkFooter();
-    darkBtn();
-}
 
 //dayMode
-function dayMode() {
-    dayTrending();
-    dayHeader();
-    
-}
 
-function dayHeader() {
-    var element = document.getElementById('headerDark');
-    element.classList.toggle("day-mode");
-}
+// const dayMode = () => {
+//     const elementHeader = document.getElementById('headerDark');
+//     const elementTrending = document.getElementById('trending');
 
-function dayTrending() {
-    var element = document.getElementById('trending');
-    element.classList.toggle("day-modeTrending");
-}
+//     elementHeader.addEventListener('click', () => {
+//         elementHeader.classList.toggle("day-mode");
+//     });
+
+//     elementTrending.addEventListener('click', () => {
+//         elementTrending.classList.toggle("day-mode");
+//     });
+// }
+// dayMode();
 
 // darkMode
-function darkTrending() {
-    var element = document.getElementById('trending');
-    element.classList.toggle("dark-modeTrending");
+
+const darkMode = (d) => {
+    let d = document.getElementById('cambio');
+    const elementTrending = document.getElementById('trending');
+    const elementHeader = document.getElementById('headerDark');
+    const elementTrending = document.getElementById('trending');
+    const elementMain = document.getElementById('main');
+    const elementFooter = document.getElementById('footer');
+    const elementBtn = document.getElementById('burger');
+    const elementSearchBar = document.getElementById('searchbar');
+
+
+    elementHeader.addEventListener('click', () => {
+        elementHeader.classList.toggle("dark-mode");
+    });
+
+    elementTrending.addEventListener('click', () => {
+        elementTrending.classList.toggle("dark-modeTrending");
+    });
+
+    elementMain.addEventListener('click', () => {
+        elementMain.classList.toggle("dark-mode");
+    });
+
+    elementFooter.addEventListener('click', () => {
+        elementFooter.classList.toggle("dark-mode");
+    });
+
+    elementBtn.addEventListener('click', () => {
+        elementBtn.classList.toggle("dark-mode");
+    });
+
+    elementSearchBar.addEventListener('click', () => {
+        elementSearchBar.classList.toggle("dark-mode");
+    });
+   
+
 }
 
-function darkMain() {
-    var element = document.getElementById('main');
-    element.classList.toggle("dark-mode");
-}
-
-function darkHeader() {
-    var elementTwo = document.getElementById('headerDark')
-    elementTwo.classList.toggle("dark-mode")
-    
-}
-
-function darkFooter() {
-    var element = document.getElementById('footer');
-    element.classList.toggle("dark-mode");
-}
-
-function darkBtn() {
-    var element = document.getElementById('burger');
-    element.classList.toggle("dark-mode");
-}
-
-function darkSearch() {
-    var element = document.getElementById('searchbar');
-    element.classList.toggle("dark-mode");
-}
+darkMode();
 //menuhamburger
-
-function changeClass() {
-    let siteNav = document.getElementById('site-nav');
-        siteNav.classList.toggle('site-nav-open');
-    
-}
 
 const navSlide = () => {     
     const burger =  document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
-    const navLinks = document.querySelectorAll('.nav-links li');
+    
 
 
     //Toggle nav

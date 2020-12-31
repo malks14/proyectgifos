@@ -5,7 +5,7 @@ const searchInput = document.getElementById('search-input');
 
 searchForm.addEventListener('submit', function(e) { //e porque siempre submit tiene un event
     e.preventDefault() //es para que que no se reload los gif
-    const q = searchInput.value; //esto es lo que el usuario escriba
+    const q = searchInput.value; //esto es lo que el usuario escrib
     search(q)
 })
 //esta funcion es para cuando se ejecute es porque el usuario busco en la barra
@@ -38,6 +38,7 @@ function search(q) { //funcion que busca los gifs. Se pone como parametro q porq
                 alt="${title}">`
     
         });
+
     
         trendingEl.innerHTML = trendingHTML
     }).catch(function(err) {

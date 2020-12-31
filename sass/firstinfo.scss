@@ -168,6 +168,10 @@
 .containerSearch {
     width: calc(156px * 2+ 3em);
     margin: auto;
+
+    @media (min-width: 769px) {
+        width: calc(200px * 4 + 3em);
+    }
 }
 
 
@@ -181,4 +185,9 @@
     columns: 2;
     column-gap: 4px;
     margin-left: 22px;
+
+    @media (min-width: 769px) {
+        columns: 4;
+        column-gap: 1em;
+    }
 }
