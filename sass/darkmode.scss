@@ -95,6 +95,12 @@
     .footercont {
         border-bottom: #000000 5px solid;
     }
+
+    .menuNavigation {
+        @media (min-width: 376px) {
+            border-top: #000 4px solid;
+        }
+    }
 }
 
 //Trending Section

@@ -1,83 +1,42 @@
-// aggregate toggle functions
+//dark mode
+const darkMode = () => {
+    const darklink = document.getElementById('day');
+    const footer = document.getElementById('footer');
+    const darksearch = document.getElementById('searchbar');
+    const darkbtn = document.getElementById('burger');
+    const darkheaer = document.getElementById('headerDark');
+    const darkmain = document.getElementById('main');
+    const darktrending = document.getElementById('trending');
 
-function darkMode() {
-    darkHeader();
-    darkMain();
-    darkTrending();
-    darkFooter();
-    darkBtn();
+
+    darklink.addEventListener('click', () => {
+        footer.classList.toggle("dark-mode");
+        darksearch.classList.toggle("dark-mode");
+        darkbtn.classList.toggle("dark-mode");
+        darkheaer.classList.toggle("dark-mode");
+        darkmain.classList.toggle("dark-mode");
+        darktrending.classList.toggle("dark-modeTrending");
+    });
 }
 
-//dayMode
-function dayMode() {
-    dayTrending();
-    dayHeader();
-    
-}
+darkMode();
 
-function dayHeader() {
-    var element = document.getElementById('headerDark');
-    element.classList.toggle("day-mode");
-}
 
-function dayTrending() {
-    var element = document.getElementById('trending');
-    element.classList.toggle("day-modeTrending");
-}
-
-// darkMode
-function darkTrending() {
-    var element = document.getElementById('trending');
-    element.classList.toggle("dark-modeTrending");
-}
-
-function darkMain() {
-    var element = document.getElementById('main');
-    element.classList.toggle("dark-mode");
-}
-
-function darkHeader() {
-    var elementTwo = document.getElementById('headerDark')
-    elementTwo.classList.toggle("dark-mode")
-    
-}
-
-function darkFooter() {
-    var element = document.getElementById('footer');
-    element.classList.toggle("dark-mode");
-}
-
-function darkBtn() {
-    var element = document.getElementById('burger');
-    element.classList.toggle("dark-mode");
-}
-
-function darkSearch() {
-    var element = document.getElementById('searchbar');
-    element.classList.toggle("dark-mode");
-}
 //menuhamburger
-
-function changeClass() {
-    let siteNav = document.getElementById('site-nav');
-        siteNav.classList.toggle('site-nav-open');
-    
-}
-
 const navSlide = () => {     
     const burger =  document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
-    const navLinks = document.querySelectorAll('.nav-links li');
+   
 
 
-    //Toggle nav
+    //Toggle nav vaya a la izquierda
     burger.addEventListener('click', ()=>{ //funcion para que el boton tome la clase de active
         nav.classList.toggle('nav-active');
 
          
      
      
-     //animacion burger
+     //animacion burger para que se haga la X 
      burger.classList.toggle('toggle');
 
     });
@@ -86,4 +45,20 @@ const navSlide = () => {
 
 navSlide(); 
 
+
+
+
+
+
+let element = document.getElementById('day').innerHTML = "Modo Nocturno";
+function changeName(){
+        
+    if (element === true) {
+        document.getElementById('day').innerHTML = "Modo Nocturno";
+    } else {
+        document.getElementById('day').innerHTML = "Modo Diurno";
+    }
+
+}
+changeName();
 

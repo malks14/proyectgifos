@@ -1,11 +1,12 @@
 
 const searchForm = document.getElementById("search-form");
 const searchInput = document.getElementById('search-input');
-
+//probar con searchnput para ver si funciona con lo que pone el usaurio arriba de los gif TAREA
 
 searchForm.addEventListener('submit', function(e) { //e porque siempre submit tiene un event
     e.preventDefault() //es para que que no se reload los gif
     const q = searchInput.value; //esto es lo que el usuario escriba
+
     search(q)
 })
 //esta funcion es para cuando se ejecute es porque el usuario busco en la barra

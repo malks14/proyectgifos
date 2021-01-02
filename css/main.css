@@ -19,7 +19,8 @@ nav {
   width: 100%; }
   @media (min-width: 376px) {
     .menuNavigation {
-      margin-right: 10px; } }
+      margin-right: 10px;
+      border-top: #572EE5 4px solid; } }
   @media (min-width: 769px) {
     .menuNavigation {
       margin-right: 150px; } }
@@ -469,6 +470,9 @@ nav {
     color: white; }
   .dark-mode .footercont {
     border-bottom: #000000 5px solid; }
+  @media (min-width: 376px) {
+    .dark-mode .menuNavigation {
+      border-top: #000 4px solid; } }
 
 .dark-modeTrending .trendinginfo {
   background: #222326;

@@ -19,9 +19,10 @@ nav {
     justify-content: space-between;
     height: 95px;
     width: 100%;
-
+   
     @media (min-width: 376px) {
         margin-right: 10px;
+        border-top: #572EE5 4px solid;
     }
 
     @media (min-width: 769px) {
@@ -125,7 +126,7 @@ nav {
        display: block;
    }
 }
-
+//vaya a la izquierda
 .nav-active {
     transform: translateX(0%); 
 }
@@ -140,7 +141,7 @@ nav {
         transform: translateX(0);
     }
 }
-
+//para hacer la X
 .toggle .line1 {
     transform: rotate(-45deg) translate(-5px, 6px);
 }
