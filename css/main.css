@@ -49,6 +49,15 @@ nav {
   letter-spacing: 3px;
   font-size: 13px;
   font-weight: bold; }
+  @media (min-width: 769px) {
+    .nav-links a {
+      color: #572EE5; } }
+
+@media (min-width: 769px) {
+  .nav-links a:visited,
+  .nav-active a:focus {
+    text-decoration: none;
+    color: #572EE5; } }
 
 .burger {
   display: none;
@@ -117,12 +126,23 @@ nav {
 .toggle .line3 {
   transform: rotate(45deg) translate(-5px, -6px); }
 
+@media (min-width: 769px) {
+  #createDay {
+    background-image: url(/assets/button-crear-gifo.svg);
+    height: 54px;
+    width: 54px;
+    cursor: pointer; } }
+
+#createDay:hover {
+  background-image: url(/assets/CTA-crear-gifo-hover.svg);
+  height: 54px;
+  width: 54px; }
+
 .myGif {
   display: none; }
   @media (min-width: 769px) {
     .myGif {
-      display: block;
-      margin-top: 5px; } }
+      display: block; } }
 
 @media (min-width: 769px) {
   .logoMobile {
@@ -139,6 +159,9 @@ nav {
   display: none; }
 
 .logoDarkDesktop {
+  display: none; }
+
+#createDark {
   display: none; }
 
 #main {
@@ -190,7 +213,8 @@ nav {
   font-size: 16px;
   line-height: 25px;
   color: #572EE5;
-  margin-top: -70px; }
+  margin-top: -70px;
+  text-align: center; }
 
 .trendingGif p {
   font-family: 'Montserrat-Medium', sans-serif;
@@ -206,24 +230,33 @@ nav {
       width: 402px; } }
   @media (min-width: 769px) {
     .trendingGif p {
-      margin-left: 520px; } }
+      margin-left: 20px; } }
 
 @media (min-width: 376px) {
   .trendingGif {
     width: 768px; } }
+@media (min-width: 376px) {
+  .trendingGif {
+    width: 100%; } }
 
 #trendingTerms {
   display: flex; }
   @media (min-width: 376px) {
     #trendingTerms {
       display: inline-block; } }
+  @media (min-width: 769px) {
+    #trendingTerms {
+      display: flex;
+      justify-content: flex-start; } }
+
+@media (min-width: 769px) {
+  .categories {
+    padding: 0; } }
 
 .search-input input {
   height: 55px;
   outline: none;
-  border: none;
   padding: 0 60px 0 20px;
-  font-size: 10px;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
   border: 1px solid #572EE5;
   border-radius: 27px;
@@ -249,6 +282,10 @@ nav {
     .search-input .iconsearch {
       right: 210px;
       top: 370px; } }
+  @media (min-width: 769px) {
+    .search-input .iconsearch {
+      right: 468px;
+      top: 332px; } }
 
 #searchbar input::placeholder {
   padding: 10px 0 10px 50px;
@@ -270,7 +307,7 @@ nav {
   border: none; }
 
 .containerSearch {
-  width: calc(156px * 2+ 3em);
+  width: calc(156px * 2 3em);
   margin: auto; }
 
 .display_search {
@@ -281,7 +318,7 @@ nav {
 #searchResults {
   columns: 2;
   column-gap: 4px;
-  margin-left: 22px; }
+  margin-left: 20px; }
 
 .trendinginfo {
   height: 430px;
@@ -307,7 +344,7 @@ nav {
   padding-top: 50px; }
   @media (min-width: 769px) {
     .trendinginfo h2 {
-      margin-left: -400px; } }
+      margin-left: -40px; } }
 
 .trendinginfo p {
   font-family: 'Roboto-Regular', sans-serif;
@@ -423,7 +460,7 @@ nav {
 .dark-mode {
   background-color: #37383C;
   transition: background-color .2s; }
-  @media (min-width: 769) {
+  @media (min-width: 769px) {
     .dark-mode .nav-links a {
       color: #fff; } }
   .dark-mode .firstinfo h1 {
@@ -435,6 +472,12 @@ nav {
     .dark-mode .search-input .iconsearch {
       right: 221px;
       top: 351px; } }
+  @media (min-width: 769px) {
+    .dark-mode .search-input .iconsearch {
+      right: 478px;
+      top: 320px; } }
+  .dark-mode .search-input input {
+    color: #fff; }
   .dark-mode .burger .line1,
   .dark-mode .burger .line2,
   .dark-mode .burger .line3 {
@@ -473,6 +516,19 @@ nav {
   @media (min-width: 376px) {
     .dark-mode .menuNavigation {
       border-top: #000 4px solid; } }
+  @media (min-width: 769px) {
+    .dark-mode #createDay {
+      display: none; } }
+  @media (min-width: 769px) {
+    .dark-mode #createDark {
+      background-image: url(/assets/CTA-crear-gifo-modo-noc.svg);
+      display: block;
+      height: 54px;
+      width: 54px; } }
+  .dark-mode #createDark:hover {
+    background-image: url(/assets/CTA-crear-gifo-hover-modo-noc.svg);
+    height: 54px;
+    width: 54px; }
 
 .dark-modeTrending .trendinginfo {
   background: #222326;

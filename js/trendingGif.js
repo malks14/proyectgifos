@@ -14,10 +14,12 @@ fetch(path).then(function(res) {
     json.data.forEach(function(obj) {
         console.log(obj) 
 
-        const url = obj.images.fixed_width.url
+        const url = obj.images.fixed_width.url;
         const title = obj.images.title
         trendingHTML += `<img 
+            id = "displayMax"
             class="display_gif"
+            onclick="displayMax(this)"
             src="${url}"
             alt="${title}">`
 
@@ -27,6 +29,15 @@ fetch(path).then(function(res) {
 }).catch(function(err) {
     console.log(err.message)
 })
+
+//Increase size Gif 
+
+//     let gifMax = document.getElementById('displayMax');
+//     function displayMax(img) {
+//         img.style.transform = "scale(1.5)"; 
+//     }
+// displayMax();
+
 
 //Trending Reactions
 

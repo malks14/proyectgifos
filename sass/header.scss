@@ -62,7 +62,23 @@ nav {
     letter-spacing: 3px;
     font-size: 13px;
     font-weight: bold;
+
+    @media (min-width: 769px) {
+        color: #572EE5;
+    }
 }
+
+.nav-links a:visited,
+.nav-active a:focus {
+    @media (min-width: 769px) {
+        text-decoration: none;
+        color: #572EE5;
+    }
+    
+}
+
+
+
 
 
 .burger {
@@ -154,13 +170,28 @@ nav {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
+#createDay {
+    @media (min-width: 769px) {
+        background-image: url(/assets/button-crear-gifo.svg);
+        height: 54px;
+        width: 54px;
+        cursor: pointer;
+    }
+}
+
+#createDay:hover {
+
+        background-image: url(/assets/CTA-crear-gifo-hover.svg);
+        height: 54px;
+        width: 54px;
+    
+}
+
+
 .myGif {
     display: none;
-
     @media (min-width: 769px) {
         display: block;
-        margin-top: 5px;
-        
     }
 }
 
@@ -186,5 +217,10 @@ nav {
 
 
 .logoDarkDesktop {
+    display: none;
+}
+
+//create button
+#createDark {
     display: none;
 }

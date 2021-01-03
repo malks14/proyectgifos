@@ -28,14 +28,10 @@ function search(q) { //funcion que busca los gifs. Se pone como parametro q porq
             console.log(obj) 
     
             const url = obj.images.fixed_width.url
-            const width = obj.images.fixed_width.width
-            const height = obj.images.fixed_width.height
             const title = obj.images.title
             trendingHTML += `<img 
                 class="display_search"
                 src="${url}"
-                width="${width}" 
-                height="${height}" 
                 alt="${title}">`
     
         });

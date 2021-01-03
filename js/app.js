@@ -1,4 +1,5 @@
 //dark mode
+let modoNoc = false;
 const darkMode = () => {
     const darklink = document.getElementById('day');
     const footer = document.getElementById('footer');
@@ -16,7 +17,25 @@ const darkMode = () => {
         darkheaer.classList.toggle("dark-mode");
         darkmain.classList.toggle("dark-mode");
         darktrending.classList.toggle("dark-modeTrending");
+
+        
+        //funcion para cambiar el li
+        function changeLi(){
+            let modoNocturno = "Modo Nocturno";
+            let modoDiurno = "Modo Diurno";
+        if (modoNoc == false) {
+            document.getElementById('day').innerHTML = modoDiurno;
+            modoNoc = true;
+    
+        } else {
+            document.getElementById('day').innerHTML = modoNocturno;
+            modoNoc = false;
+        }
+    
+    }
+    changeLi();
     });
+    
 }
 
 darkMode();
@@ -50,15 +69,6 @@ navSlide();
 
 
 
-let element = document.getElementById('day').innerHTML = "Modo Nocturno";
-function changeName(){
-        
-    if (element === true) {
-        document.getElementById('day').innerHTML = "Modo Nocturno";
-    } else {
-        document.getElementById('day').innerHTML = "Modo Diurno";
-    }
 
-}
-changeName();
+
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto Gifos</title>
+    <title>Proyecto GifOS</title>
     <link rel="stylesheet" href="css/main.css">
     <script src="https://kit.fontawesome.com/3c919e8baa.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -13,30 +13,38 @@
 
 <body>
     <header id="headerDark">
-       
-        <nav class="menuNavigation">
-            <div class="menuNavigation_logo">
-                <a href="index.html"><img src="assets/logo-mobile.svg" alt="Gifo's logo" class="logoMobile"></a>
-                <a href="index.html"><img src="assets/logo-desktop.svg" alt="Gifo's logo" class="logoDesktop"></a>
-                <a href="index.html"><img src="assets/logo-mobile-modo-noct.svg" alt="Mobile Dark Logo" class="logoDarkMobile"></a>
-            </div>
-           
-        
-            <ul class="nav-links">
-                <li ><a id="dayLi" onclick="darkMode()"; onclick="dayMode()">Modo Nocturno</a></li>
-                <li><a href="">Favoritos</a></li>
-                <li><a href="">Mis GIFOS</a></li>
-            </ul>
-        
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-            
-            
-        </nav>
+
+                <nav class="menuNavigation">
+                    <div class="menuNavigation_logo">
+                        <a href="index.html"><img src="assets/logo-mobile.svg" alt="Gifo's logo" class="logoMobile"></a>
+                        <a href="index.html"><img src="assets/logo-desktop.svg" alt="Gifo's logo" class="logoDesktop"></a>
+                        <a href="index.html"><img src="assets/logo-mobile-modo-noct.svg" alt="Mobile Dark Logo" class="logoDarkMobile"></a>
+                        <a href="index.html"><img src="assets/Logo-modo-noc.svg" alt="Mobile Dark Logo" class="logoDarkDesktop"></a>
+                    </div>
+                   
+                
+                    <ul class="nav-links">
+                        <li><a id="day">Modo Nocturno</a></li>
+                        <li><a href="favoritos.html">Favoritos</a></li>
+                        <li><a href="">Mis GIFOS</a></li>
+                        <div class="myGif">
+                            <a href="misgifos.html"><div id="createDay"></div></a>
+                            <a href="misgifos.html"><div id="createDark"></div></a>
+                        </div>
+                    </ul>
+                
+                    <div id="burger" class="burger">
+                        <div class="line1"></div>
+                        <div class="line2"></div>
+                        <div class="line3"></div>
+                    </div>
+                    </nav>
+                    
+                </nav>
     </header>
-<script src="js/app.js"></script>
 </body>
+<script src="/js/app.js"></script>
+<script src="/js/trendingGif.js"></script>
+<script src="/js/searchbar.js"></script>
+<script src="/js/suggestions.js"></script>
 </html>
