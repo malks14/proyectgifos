@@ -556,6 +556,19 @@ nav {
   width: 688px;
   margin-right: 380px;
   margin-top: 40px; }
+  .bigBox h2 {
+    color: #572EE5;
+    font-family: 'Montserrat-Bold', sans-serif;
+    font-size: 25px;
+    text-align: center;
+    line-height: 35px;
+    height: 70px;
+    width: 550px; }
+  .bigBox .wordColor {
+    color: #50E3C2; }
+  .bigBox .wordDown::after {
+    content: "\a";
+    white-space: pre; }
 
 .camera {
   float: left; }
