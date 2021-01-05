@@ -77,7 +77,14 @@ nav {
     
 }
 
-
+#day a:visited,
+#day a:focus {
+    @media (min-width: 769px) {
+        text-decoration: none;
+        color: #572EE5;
+    }
+    
+}
 
 
 

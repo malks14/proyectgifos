@@ -61,6 +61,7 @@
         }
     }
 
+    //logos gifos
     .logoMobile{
         display:none;
     }
@@ -82,6 +83,14 @@
             display: block;
         }
         
+    }
+
+    .logoDesktopCreate {
+        display: none;
+    }
+    
+    .logoDarkDesktop {
+        margin-left: 100px;
     }
 
     .trendingGif {

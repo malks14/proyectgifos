@@ -11,14 +11,6 @@ const darkMode = () => {
 
 
     darklink.addEventListener('click', () => {
-        footer.classList.toggle("dark-mode");
-        darksearch.classList.toggle("dark-mode");
-        darkbtn.classList.toggle("dark-mode");
-        darkheaer.classList.toggle("dark-mode");
-        darkmain.classList.toggle("dark-mode");
-        darktrending.classList.toggle("dark-modeTrending");
-
-        
         //funcion para cambiar el li
         function changeLi(){
             let modoNocturno = "Modo Nocturno";
@@ -31,6 +23,16 @@ const darkMode = () => {
             document.getElementById('day').innerHTML = modoNocturno;
             modoNoc = false;
         }
+        darkheaer.classList.toggle("dark-mode");
+        footer.classList.toggle("dark-mode");
+        darksearch.classList.toggle("dark-mode");
+        darkbtn.classList.toggle("dark-mode");
+        darkmain.classList.toggle("dark-mode");
+        darktrending.classList.toggle("dark-modeTrending");
+
+        
+        
+        
     
     }
     changeLi();

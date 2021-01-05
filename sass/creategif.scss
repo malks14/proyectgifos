@@ -2,6 +2,10 @@
     margin-left: 100px;
 }
 
+.containerCamera {
+    width: 100%;
+}
+
 .bigBox {
     border: 1px solid #572EE5;
     float: right;
@@ -19,6 +23,7 @@
         line-height: 35px;
         height: 70px;
         width: 550px;
+        z-index: 2;
     }
 
     .wordColor {
@@ -45,4 +50,26 @@
 .cameraLight {
     margin-left: -4px;
     margin-bottom: 24px;
+}
+
+.greenBox {
+    position:relative;
+    margin: 8px 10px;
+    width: 668px;
+    height: 370px;
+    
+
+    border: 1px solid #50E3C2;
+    
+}
+.greenBox:before {
+    content:'';
+    position:absolute;
+    top:-1px; 
+    left:-1px;
+    border:1px solid #fff;
+    height:100%;
+    width:100%;
+    border-radius: 10%;
+    z-index: 1;
 }
