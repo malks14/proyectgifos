@@ -587,6 +587,7 @@ nav {
     margin-bottom: 34px; }
   .dark-mode .borderpurple {
     background-color: #fff; }
+  .dark-mode .titleGif h1,
   .dark-mode .stepbystep,
   .dark-mode #snap,
   .dark-mode .bigBox,
@@ -737,5 +738,24 @@ nav {
   padding: 10px;
   margin-left: 660px;
   margin-top: 20px; }
+
+.titleGif {
+  text-align: center; }
+  .titleGif h1 {
+    font-family: 'Montserrat-Bold', sans-serif;
+    font-size: 25px;
+    color: #572EE5;
+    text-align: center;
+    line-height: 30px; }
+  .titleGif .imgBig {
+    padding-top: 70px; }
+  .titleGif p {
+    font-family: 'Montserrat-Bold', sans-serif;
+    font-size: 22px;
+    color: #50E3C2;
+    text-align: center;
+    line-height: 25px;
+    padding-top: 20px;
+    padding-bottom: 40px; }
 
 /*# sourceMappingURL=main.css.map */

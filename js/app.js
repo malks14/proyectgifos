@@ -24,11 +24,12 @@ const darkMode = () => {
             modoNoc = false;
         }
         darkheaer.classList.toggle("dark-mode");
-        darkmain.classList.toggle("dark-mode");
         footer.classList.toggle("dark-mode");
+        darkmain.classList.toggle("dark-mode");
+        darktrending.classList.toggle("dark-modeTrending");
         darksearch.classList.toggle("dark-mode");
         darkbtn.classList.toggle("dark-mode");
-        darktrending.classList.toggle("dark-modeTrending");
+        
 
         
         
