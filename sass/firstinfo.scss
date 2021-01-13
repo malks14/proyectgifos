@@ -192,6 +192,18 @@
 .containerSearch {
     width: calc(156px * 2 3em);
     margin: auto;
+
+    @media (min-width: 769px) {
+        width: calc(200px * 4 3em);
+        margin: auto;
+    }
+
+    p {
+        @media (min-width: 769px) {
+            width: 100%;
+        }
+        
+    }
 }
 
 
@@ -205,4 +217,33 @@
     columns: 2;
     column-gap: 4px;
     margin-left: 20px;
+
+    @media (min-width: 769px) {
+        columns: 4;
+        column-gap: 40px;
+    }
+}
+
+#searchTerm {
+    font-family: 'Montserrat-Bold', sans-serif;
+    font-size: 25px;
+    color: #572EE5;
+    text-align: center;
+    line-height: 40px;
+    margin: 20px 0 20px;
+
+    @media (min-width: 769px) {
+        font-size: 35px;
+        line-height: 30px;
+    }
+}
+
+#searchTerm::before {
+    content : "";
+    display: block;
+    height  : 1px;
+    width   : 150px;  
+    background-color: #9CAFC3;
+    margin: 10px auto;
+    margin-top: 20px;
 }

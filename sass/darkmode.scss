@@ -110,7 +110,7 @@
     }
 
     .footercont {
-        border-bottom: #000000 5px solid;
+        border-bottom: #000 5px solid;
     }
 
     .menuNavigation {
@@ -140,6 +140,48 @@
         background-image: url(/assets/CTA-crear-gifo-hover-modo-noc.svg);
         height: 54px;
         width: 54px;
+    }
+
+    //CreateGif
+
+    .cameraImgDark {
+        display: block;
+        margin-left: 80px;
+        margin-top: 150px;
+        height: 200px;
+        width: 120px;
+    }
+
+    .cameraImg {
+        display: none;
+    }
+
+    .cameraLight {
+        margin-left: -4px;
+        margin-bottom: 34px;
+    }
+
+    .borderpurple {
+        background-color: #fff;
+    }
+
+    .stepbystep,
+    #snap,
+    .bigBox,
+    .bigBox h2 {
+        border-color: #fff;
+        color: #fff;
+    }
+
+    .greenBox::before{
+        border:1px solid #37383C;
+    }
+
+    .filmNight {
+        display: block;
+    }
+    .filmDay {
+        display: none;
     }
 
 }

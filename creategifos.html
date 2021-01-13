@@ -34,30 +34,46 @@
                 </nav>
     </header>
     <main>
-        <div class="containerFilm">
-            <div class="camera">
-                <img class="cameraImg" src="assets/element-camara.svg" alt="">
-                <img class="cameraLight" src="assets/element-luz-camara.svg" alt="">
-            </div>
-
-            <div class="record">
-                <div class="bigBox">
-                    <div class="greenBox">
-                        <h2>Aquí<span class="wordDown"> podrás</span> crear tus propios <span class="wordColor">GIFOS</span></h2>
-                        <div class="containerCamera">
-                            <video  id="video" width="640" height="400" autoplay></video>
-                            <button id="snap">Foto</button>
-                            <canvas id="canvas" id="640" height="400" width="640"></canvas>
-                            
-                        </div>
+        <section id="main">
+                <div class="containerFilm">
+                    <div class="camera">
+                        <img class="cameraImg" src="assets/camara.svg" alt="">
+                        <img class="cameraImgDark" src="assets/camara-modo-noc.svg" alt="">
+                        <img class="cameraLight" src="assets/element-luz-camara.svg" alt="">
                     </div>
-                </div>
+                </div>   
+                <div class="bigCtn">
+                    <div class="bigBox">
+                            <div class="greenBox">
+                                <div class="textBox">
+                                    <h2>Aquí<span class="wordDown"> podrás</span> crear tus propios <span class="wordColor">GIFOS</span></h2>
+                                    <p>Crea tu GIFO en sólo 3 pasos!</p>
+                                    <p>(sólo necesitas una cámara para grabar un video)</p>
+                                </div>
+                                <div class="containerCamera">
+                                    <!-- <video  id="video" width="500" height="300" autoplay></video> -->
+                                    <!-- <canvas id="canvas" id="640" height="400" width="640"></canvas> -->
+                                </div>
+                            </div>
+                    </div>
+                </div> 
                 
+        
+            <div>
+                <div class="stepCtn">
+                    <button class="stepbystep"><span class="textBtn">1</span></button>
+                    <button class="stepbystep"><span class="textBtn">2</span></button>
+                    <button class="stepbystep"><span class="textBtn">3</span></button>
+                </div>
             </div>
-          
 
-
-        </div>
+            <div class="borderpurple"></div>
+            <button id="snap">COMENZAR</button>
+            <div class="film">
+                <img src="assets/pelicula.svg" alt="" class="filmDay">
+                <img src="assets/pelicula-modo-noc.svg" alt="" class="filmNight">
+            </div>
+        </section>
     </main>
     <footer id="footer">
         <div class="footercont">
@@ -72,6 +88,7 @@
             <div class="textFooter">
             <p>&copy; GIFOS 2020 All Rights Reserved.</p>
             </div>
+            
             
         </div>
     </footer>

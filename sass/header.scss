@@ -53,6 +53,10 @@ nav {
 
 .nav-links li {
     list-style: none;
+    @media (min-width: 769px) {
+        text-transform: uppercase;
+    }
+    
     
     
 }

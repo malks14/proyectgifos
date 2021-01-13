@@ -1,21 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .logoDesktopCreate {
     margin-left: 100px;
 }
 
-.containerCamera {
-    width: 100%;
+
+.camera {
+    float: left;
+}
+.bigCtn {
+    padding-top: 70px;
 }
 
 .bigBox {
     border: 1px solid #572EE5;
-    float: right;
     height: 390px;
     width: 688px;
-    margin-right: 380px;
-    margin-top: 40px;
+    margin-left: 380px;
+
+    .textBox {
+        padding-top: 100px;
+    }
 
     h2{
-       
+        padding-left: 100px;
         color: #572EE5;
         font-family: 'Montserrat-Bold', sans-serif;
         font-size: 25px;
@@ -24,6 +36,13 @@
         height: 70px;
         width: 550px;
         z-index: 2;
+    }
+
+    p {
+        font-family: 'Robot-Regular', sans-serif;
+        font-size: 16px;
+        line-height: 29px;
+        text-align: center;
     }
 
     .wordColor {
@@ -36,20 +55,20 @@
     }
 } 
 
-.camera {
-    float: left;
-}
-
 .cameraImg {
     margin-left: 80px;
     margin-top: 150px;
-    height: 120px;
+    height: 200px;
     width: 120px;
+}
+
+.cameraImgDark {
+    display: none;
 }
 
 .cameraLight {
     margin-left: -4px;
-    margin-bottom: 24px;
+    margin-bottom: 34px;
 }
 
 .greenBox {
@@ -71,5 +90,66 @@
     height:100%;
     width:100%;
     border-radius: 10%;
-    z-index: 1;
+    // z-index: 1;
+}
+
+.borderpurple {
+    margin: 10px;
+    background-color:#572EE5;
+    border-radius: 20px;
+    width: 750px;
+    height: 5px;
+    margin-left: 350px;
+}
+
+
+.stepbystep {
+    border: #572EE5 1px solid;
+    border-radius: 50%;
+    background-color: transparent;
+    padding: 10px;
+    margin-left: 20px;
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+    font-family: 'Robot', sans-serif;
+    color: #572EE5;
+
+
+}
+
+#snap:hover,
+.stepbystep:hover {
+    background-color: #572EE5;
+    color: #fff;
+}
+
+.textBtn {
+    display: block;
+    text-align: center;
+    line-height: 1px;
+}
+
+.film {
+    float: right;
+}
+
+.filmNight {
+    display: none;
+}
+
+.stepCtn {
+    margin-top: 20px;
+    margin-left: 620px;
+}
+
+#snap {
+    background-color: transparent;
+    border: #572EE5 1px solid;
+    border-radius: 20px;
+    color: #572EE5;
+    font-size: 13px;
+    padding: 10px;
+    margin-left: 660px;
+    margin-top: 20px;
 }

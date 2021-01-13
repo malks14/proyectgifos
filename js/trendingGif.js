@@ -48,20 +48,26 @@ fetch(pathTerm).then(function(res) {
 }).then(function(json) {
     console.log(json)
     const trendingEl = document.getElementById('trendingTerms')
-    let trendingHTML = ''
+    let trendingHTML = [''];
+    resultado = trendingHTML.join(", ")
    
-   
+    let contador = 0;
     json.data.slice(0,5).forEach(function(obj) {
         
-        console.log(obj)
+        console.log(json.data.join(", "))
         const title = obj
+        if (contador <= 3){
+        resultado += `<p class="categories">${title},</p>`
         
-        trendingHTML += `<p class="categories">${title}</p>`
-        
+        } else {
+            resultado += `<p class="categories">${title}</p>`
+        }
+        contador++;
 
     });
 
-    trendingEl.innerHTML = trendingHTML
+    trendingEl.innerHTML = resultado
 }).catch(function(err) {
     console.log(err.message)
 });
+
