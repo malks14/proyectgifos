@@ -740,6 +740,7 @@ nav {
   margin-top: 20px; }
 
 .titleGif {
+  width: 100%;
   text-align: center; }
   .titleGif h1 {
     font-family: 'Montserrat-Bold', sans-serif;
@@ -747,8 +748,6 @@ nav {
     color: #572EE5;
     text-align: center;
     line-height: 30px; }
-  .titleGif .imgBig {
-    padding-top: 70px; }
   .titleGif p {
     font-family: 'Montserrat-Bold', sans-serif;
     font-size: 22px;
@@ -757,5 +756,13 @@ nav {
     line-height: 25px;
     padding-top: 20px;
     padding-bottom: 40px; }
+
+@media (max-width: 768px) {
+  .noGif {
+    display: none; } }
+
+@media (max-width: 768px) {
+  .myFav {
+    display: none; } }
 
 /*# sourceMappingURL=main.css.map */

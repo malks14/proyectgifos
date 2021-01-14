@@ -1,4 +1,5 @@
 .titleGif {
+    width: 100%;
     text-align: center;
     h1 {
         font-family: 'Montserrat-Bold', sans-serif;
@@ -6,10 +7,6 @@
         color: #572EE5;
         text-align: center;
         line-height: 30px;
-    }
-
-    .imgBig {
-        padding-top: 70px;
     }
 
     p {
@@ -20,5 +17,18 @@
         line-height: 25px;
         padding-top: 20px;
         padding-bottom: 40px;
+    }
+}
+
+
+.noGif {
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+.myFav {
+    @media (max-width: 768px) {
+        display: none;
     }
 }
