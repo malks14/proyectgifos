@@ -55,7 +55,7 @@
                                 <input id="search-input" type="text" placeholder="Busca GIFOS y más">
                                 <div class="autocomplete-box"></div>
                             <div class="iconsearch">
-                                <button class="btn-icon"><i class="fas fa-search"></i></button>
+                                <button class="btn-icon" id="searchBtn"><i class="fas fa-search"></i></button>
                             </div>
                         </div>
                     </div>
@@ -78,11 +78,10 @@
         </section>
 
         <section id="trending" class="day-modeTrending">
-            <div class="trendinginfo">
+            <div class="trendinginfo" id="trendinginfo">
                 <h2>Trending GIFOS</h2>
                 <p>Mira los <span class="gifodown">últimos</span> GIFOS de nuestra comunidad.</p>
-                <div class="trending_gif_display">
-                    <div id="trending_gif" class="trending_gif"></div>
+                <div class="trending_gif" id = "gifTrendingCtn">
                 </div>
             </div>
             

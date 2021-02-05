@@ -90,3 +90,20 @@
         width: 357px;
     }
 }
+
+
+#arrowRight {
+    background-color: none;
+    border: 1px solid #572EE5;
+    color: #572EE5;
+    font-size: 20px;
+    height: 40px;
+    width: 40px;
+    outline: none;
+    margin: auto;
+}
+
+#arrowRight:hover {
+    background-color: #572EE5;
+    color: #fff;
+}
