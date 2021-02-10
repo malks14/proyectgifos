@@ -5,148 +5,105 @@ const apikey = 'ndufihd3YVOMrmoIEogAJJ2vZ8Ysk9mK';
 
 const gifTrendingCtn = document.getElementById('gifTrendingCtn');
 const trendinginfo = document.getElementById('trendinginfo');
-const path = `https://api.giphy.com/v1/gifs/trending?api_key=${apikey}&limit=${limit}&offset=${offset}`;
 
 
+
+async function newsSearch() {
     
-    fetch(path).then((response => {
-        return response.json();
-    })).then((json => {
+    const path = `https://api.giphy.com/v1/gifs/trending?api_key=${apikey}&limit=${limit}&offset=${offset}`;
+    const resp = await fetch(path);
+    const info = await resp.json();
+    return info;
+}
          
-        console.log(json.data)
-        arrayTrending = [];
-        class gifTrendings {
-            constructor(src, title) {
-            this.src = src;
-            this.title = title;
-              }
-            }
+let info = newsSearch()
+info.then(json => {
+    console.log(json)
+    for (i = 0; i < limit; i++) {
+        let divmouse = document.createElement("div");
+        
+          
+        let img = document.createElement("img");
+        img.setAttribute("src", json.data[i].images.fixed_width.url);
+        img.setAttribute("title", json.data[i].title)
+        img.setAttribute("class", "trending_gif");
+        img.setAttribute("class", "display_gif");
+        
+        divmouse.appendChild(img);
+        gifTrendingCtn.appendChild(divmouse);
+
+        if(screen.width >= 769) {
+            let divCards = document.createElement("div");
+            let dwnBtn = document.createElement("img");
+            let sizeBtn = document.createElement("img");
+            let likeBtn = document.createElement("i");
+            let title = document.createElement("p")
+            let user = document.createElement("p")
+
+            divCards.setAttribute("class", "divCards");
+
+            title.setAttribute("class", "title");
+            user.setAttribute("class", "title");
+
+            likeBtn.setAttribute("class", "far fa-heart")
             
-        for (i = 0; i < limit; i++) {
-            if (screen.width > 768) {
-                limit = 3;
-            } else {
-                limit = 24;
-            }
+
+            dwnBtn.setAttribute("class", "dwnBtn");
+            dwnBtn.setAttribute("src", "/assets/icon-download.svg");
+
+            sizeBtn.setAttribute("src", "/assets/icon-max-normal.svg")
+
+            divCards.appendChild(likeBtn);
+            divCards.appendChild(dwnBtn);
+            divCards.appendChild(sizeBtn);
+            divCards.appendChild(title);
+            divCards.appendChild(user);
+            divCards.style.visibility = "hidden";
+
+            divmouse.appendChild(divCards);
+            
+
+            divmouse.addEventListener("mouseover", () => {
+                divCards.style.visibility = "visible";
+               
+            })
+            divmouse.addEventListener("mouseout", () => {
+                divCards.style.visibility = "hidden";
+            });
+            dwnBtn.addEventListener("mouseover", () => {
+                dwnBtn.src = "/assets/icon-download-hover.svg";
+            });
     
-            let newSrc = json.data[i].images.fixed_width.url;
-            let newTitle = json.data[i].title;
-            let giftTrendings = new gifTrendings(
-                newSrc,
-                newTitle,
-            );
-                
-            arrayTrending.push(giftTrendings);
-              
-            let img = document.createElement("img");
-           
-            img.setAttribute("class", "trending_gif");
-            img.setAttribute("class", "display_gif");
-            img.src = newSrc;
-            img.title = newTitle;
-            gifTrendingCtn.appendChild(img);
+            dwnBtn.addEventListener("mouseout", () => {
+                dwnBtn.src = "/assets/icon-download.svg";
+            });
+
+            sizeBtn.addEventListener("mouseover", () => {
+                fullSize.src = "/assets/icon-max-hover.svg";
+            });
+    
+            sizeBtn.addEventListener("mouseout", () => {
+                fullSize.src = "/assets/icon-max-normal.svg";
+            });
             
         }
-        let btnR = document.createElement("button");
-        btnR.setAttribute("id", "arrowRight")
-        btnR.setAttribute("class", "fas fa-chevron-right");
-        gifTrendingCtn.appendChild(btnR);
-
-        btnR.addEventListener("click", function () {
-            if (screen.width > 1280) {
-                document.getElementById("gifTrendingCtn").scrollLeft += 1158;
-            }
-        });
-    
-    })).catch(err => {
-        console.log("error", err);
-    })
-
-
-   
-
-
-    
-
-
-
-    // async function trending() {
-    //     console.log(path);
-    //     const resp = await fetch(path);
-    //     const info = await  resp.json();
-    //     return info;
         
-    // }
+    }
+    let btnR = document.createElement("button");
+    btnR.setAttribute("id", "arrowRight")
+    btnR.setAttribute("class", "fas fa-chevron-right");
+    gifTrendingCtn.appendChild(btnR);
 
-    // let info = trending(info);
-    // console.log(info);
-    // info.then(data => {
-    //     console.log(info);
-    //     let arrayTrending = [];
-    //     class gifTrending {
-    //         constructor (src,title) {
-    //             this.src = src;
-    //             this.title = title;
-    //         }
-    //     }
+    btnR.addEventListener("click", function () {
+        if (screen.width > 1280) {
+            document.getElementById("gifTrendingCtn").scrollLeft += 1158;
+        }
+    });
+    
+}).catch(err => {
+    console.log("error", err);
+})
 
-    //     for (i = 0; i < 24; i++) {
-    //         let newSrc = json.data[i].images.fixed_width.url;
-    //         let newTitle = json.data[i].title;
-    //         let giftTrendings = new gifTrendings(
-    //           newSrc,
-    //           newTitle,
-    //         );
-    //         arrayTrending.push(giftTrendings);
-
-    //         let img = document.createElement("img");
-    //         img.setAttribute("class", "trending_gif");
-    //         img.setAttribute("class", "display_gif");
-    //         img.src = newSrc;
-    //         img.title = newTitle;
-            
-    //         gifTrendingCtn.appendChild(img);
-    //     }
-    // }).catch(err => {
-    //         console.log("error", err);
-    // })
-
-
-
-
-// fetch(path).then(function(res) {
-//     return res.json()
-// }).then(function(json) {
-//     console.log(json.data[0].embed_url)
-//     const trendingEl = document.getElementById('trending_gif')
-//     let trendingHTML = []
-
-
-//     json.data.forEach(function(obj) {
-//         console.log(obj) 
-
-//         const url = obj.images.fixed_width.url;
-//         const title = obj.images.title
-//         trendingHTML += `<img 
-//             id = "displayMax"
-//             class="display_gif"
-//             src="${url}"
-//             alt="${title}">`
-
-//     });
-
-//     trendingEl.innerHTML = trendingHTML
-// }).catch(function(err) {
-//     console.log(err.message)
-// })
-
-//Increase size Gif 
-
-//     let gifMax = document.getElementById('displayMax');
-//     function displayMax(img) {
-//         img.style.transform = "scale(1.5)"; 
-//     }
-// displayMax();
 
 
 //Trending Reactions

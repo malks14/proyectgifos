@@ -53,9 +53,11 @@
                     <div id="searchbar">
                         <div class="search-input">
                                 <input id="search-input" type="text" placeholder="Busca GIFOS y más">
-                                <div class="autocomplete-box"></div>
+                                <div id="autocomplete" class="autcomplete"></div>
+                                
                             <div class="iconsearch">
                                 <button class="btn-icon" id="searchBtn"><i class="fas fa-search"></i></button>
+                                <button class="hideCross" id= "suggCross"><i  class="fas fa-times"></i></button>
                             </div>
                         </div>
                     </div>
@@ -69,6 +71,7 @@
                 <div class="containerSearch">
                     <p id="searchTerm"></p>
                     <div id="searchResults"></div>
+                    <button class="btnNotDisplay" id="btnMore">VER MÁS</button>
                 </div>
                 
             </div>

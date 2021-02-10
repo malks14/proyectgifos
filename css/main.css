@@ -332,12 +332,10 @@ nav {
   margin-bottom: 10px; }
 
 #searchResults {
-  columns: 2;
-  column-gap: 4px;
+  column-gap: 10px;
   margin-left: 20px; }
   @media (min-width: 769px) {
     #searchResults {
-      columns: 4;
       column-gap: 40px; } }
 
 #searchTerm {
@@ -352,14 +350,87 @@ nav {
       font-size: 35px;
       line-height: 30px; } }
 
-#searchTerm::before {
-  content: "";
+#search-input {
+  color: #572EE5; }
+
+.btnNotDisplay,
+.hideCross {
+  display: none; }
+
+.btnDisplay {
   display: block;
-  height: 1px;
-  width: 150px;
-  background-color: #9CAFC3;
-  margin: 10px auto;
-  margin-top: 20px; }
+  margin-left: 117px;
+  margin-right: auto;
+  margin-bottom: 25px;
+  border: 1px solid #572EE5;
+  border-radius: 25px;
+  outline: none;
+  background: none;
+  font-family: 'Montserrat-Bold', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  color: #572EE5;
+  letter-spacing: 0;
+  padding: 16px 30px;
+  text-align: center; }
+
+.suggCross {
+  display: block;
+  background: none;
+  border: none;
+  color: #572EE5;
+  padding: 12px 16px;
+  font-size: 20px;
+  cursor: pointer; }
+
+.suggCross:focus {
+  outline: none;
+  border: none; }
+
+.title {
+  margin-top: 193px;
+  margin-left: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000000;
+  width: 94px;
+  height: 19px; }
+  body.dark .title {
+    color: #ffffff; }
+  .title .user {
+    position: relative;
+    bottom: 65px;
+    left: 28px;
+    font-size: 15px;
+    color: #000000;
+    width: 31px;
+    height: 18px; }
+    body.dark .title .user {
+      color: #ffffff; }
+
+.dwnBtn,
+.divCards {
+  position: relative;
+  top: -80px;
+  left: 320px;
+  opacity: 0.5;
+  border: 1px solid #9cafc3;
+  border-radius: 6px; }
+
+.divCards {
+  background: #572ee5;
+  box-shadow: 0 0 5px #572ee5;
+  opacity: 0.6;
+  width: 200px; }
+
+.autcomplete {
+  position: relative;
+  left: 40px;
+  top: -80px; }
+  @media (min-width: 769px) {
+    .autcomplete {
+      left: 460px;
+      top: -80px; } }
 
 .trendinginfo {
   height: 430px;
@@ -536,9 +607,9 @@ nav {
   .dark-mode .burger .line1,
   .dark-mode .burger .line2,
   .dark-mode .burger .line3 {
-    background-color: #ffffff; }
+    background-color: #fff; }
   .dark-mode .btn-icon {
-    color: white; }
+    color: #fff; }
   .dark-mode #searchbar input {
     border: 1px solid #FFFFFF;
     border-radius: 27px;

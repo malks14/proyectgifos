@@ -8,6 +8,8 @@ const darkMode = () => {
     const darkheaer = document.getElementById('headerDark');
     const darkmain = document.getElementById('main');
     const darktrending = document.getElementById('trending');
+    const darksugg = document.getElementsByClassName('searchSugg');
+    const darkp = document.getElementsByClassName('pSugg');
 
 
     darklink.addEventListener('click', () => {
@@ -29,6 +31,8 @@ const darkMode = () => {
         darktrending.classList.toggle("dark-modeTrending");
         darksearch.classList.toggle("dark-mode");
         darkbtn.classList.toggle("dark-mode");
+        darksugg.classList.toggle("dark-mode");
+        darkp.classList.toggle("dark-mode");
         
 
         

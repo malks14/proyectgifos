@@ -42,12 +42,13 @@
         .line1,
         .line2,
         .line3 {
-            background-color: #ffffff;
+            background-color: #fff;
         }
     }
 
-    .btn-icon {
-        color: white;
+    .btn-icon
+    {
+        color: #fff;
     }
     #searchbar input {
         border: 1px solid #FFFFFF;
@@ -188,6 +189,8 @@
     }
 
 }
+
+
 
 //Trending Section
 .dark-modeTrending {

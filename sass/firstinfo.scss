@@ -214,12 +214,12 @@
 }
 
 #searchResults {
-    columns: 2;
-    column-gap: 4px;
+    
+    column-gap: 10px;
     margin-left: 20px;
 
     @media (min-width: 769px) {
-        columns: 4;
+       
         column-gap: 40px;
     }
 }
@@ -238,12 +238,138 @@
     }
 }
 
-#searchTerm::before {
-    content : "";
-    display: block;
-    height  : 1px;
-    width   : 150px;  
-    background-color: #9CAFC3;
-    margin: 10px auto;
-    margin-top: 20px;
+// #searchTerm::before {
+//     content : "";
+//     display: block;
+//     height  : 1px;
+//     width   : 150px;  
+//     background-color: #9CAFC3;
+//     margin: 10px auto;
+//     margin-top: 20px;
+// }
+
+
+#search-input {
+    color: #572EE5
 }
+
+.btnNotDisplay,
+.hideCross {
+    display: none;
+}
+
+.btnDisplay {
+    display: block;
+    margin-left: 117px;
+    margin-right: auto;
+    margin-bottom: 25px;
+    border: 1px solid #572EE5;
+    border-radius: 25px;
+    outline: none;
+    background: none;
+    font-family: 'Montserrat-Bold', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    color: #572EE5;
+    letter-spacing: 0;
+    padding: 16px 30px;
+    text-align: center;
+}
+
+
+.suggCross {
+    display: block;
+    background: none;
+    border: none;
+    color: #572EE5;
+    padding: 12px 16px;
+    font-size: 20px;
+    cursor: pointer;
+  
+}
+
+.suggCross:focus {
+    outline: none;
+    border: none;
+    
+}
+
+
+
+//gif mouseover
+.title {
+    margin-top: 193px;
+    margin-left: 30px;
+    
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+    width: 94px;
+    height: 19px;
+    body.dark & {
+      color: #ffffff;
+}
+  
+.user {
+    position: relative;
+    bottom: 65px;
+    left: 28px;
+    font-size: 15px;
+    color: #000000;
+    width: 31px;
+    height: 18px;
+    body.dark & {
+      color: #ffffff;
+      
+    }
+}}
+
+.dwnBtn,
+.divCards {
+    position: relative;
+    top: -80px;
+    left: 320px;
+    opacity: 0.5;
+    border: 1px solid #9cafc3;
+    border-radius: 6px;
+}
+
+.divCards {
+    background: #572ee5;
+    box-shadow: 0 0 5px #572ee5;
+    opacity: 0.6; 
+    width: 200px;
+    
+}
+
+//sugg
+.autcomplete {
+    position: relative;
+    left: 40px;
+    top: -80px;
+
+    @media (min-width: 769px) {
+        left: 460px;
+        top: -80px;
+    }
+
+}
+
+// #pSugg {
+//  overflow: hidden;
+//  cursor: pointer;
+//  width: 100%;
+//  color: #000;
+//  font-family: 'Roboto-Regular', sans-serif;
+//  font-size: 16px;
+//  position: relative;
+// }
+
+// #searchSugg {
+//     width: 300px;
+//     border-top: 1px solid #9CAFC3;
+//     opacity: 0.5;
+//     margin-left: 20px;
+//     padding-top: 10px;
+//     height: 0.5px;
+// }
