@@ -219,8 +219,9 @@
     margin-left: 20px;
 
     @media (min-width: 769px) {
-       
         column-gap: 40px;
+      
+        margin: auto;
     }
 }
 
@@ -277,7 +278,9 @@
 }
 
 
-.suggCross {
+.suggCross,
+.likeExp,
+.dwnExp {
     display: block;
     background: none;
     border: none;
@@ -297,15 +300,14 @@
 
 
 //gif mouseover
-.title {
-    margin-top: 193px;
-    margin-left: 30px;
-    
+.title,
+.user {
+
     font-size: 16px;
     font-weight: bold;
-    color: #000000;
-    width: 94px;
-    height: 19px;
+    color: #fff;
+    
+  
     body.dark & {
       color: #ffffff;
 }
@@ -324,22 +326,31 @@
     }
 }}
 
-.dwnBtn,
-.divCards {
+.dwnBtn{
     position: relative;
-    top: -80px;
-    left: 320px;
-    opacity: 0.5;
-    border: 1px solid #9cafc3;
-    border-radius: 6px;
+    left: 210px;
+    
+   
+}
+.sizebtn{
+    position: relative;
+    left: 230px;
+    
 }
 
 .divCards {
     background: #572ee5;
     box-shadow: 0 0 5px #572ee5;
-    opacity: 0.6; 
-    width: 200px;
-    
+    opacity: 0.6;
+    width: 327px;
+    height: 255px;
+    position: relative;
+    left: 30px;
+    top: -270px;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
 }
 
 //sugg

@@ -45,20 +45,23 @@
     <main>
         <section id="main" >
             <div class="titleGif">
-                <img src="assets/icon-favoritos.svg" alt="">
-                <h1>Favoritos</h1>
-                <img src="assets/icon-fav-sin-contenido.svg" alt="" class="myFav">
-                <p>"Guarda tu primer GIFO en Favoritos para que se muestre aqui!"</p>
-            </div>
+                    <img src="assets/icon-favoritos.svg" alt="">
+                    <h1>Favoritos</h1>
+                </div>
+                <div id="hiddenFav" class="titleGif">
+                    <img src="assets/icon-fav-sin-contenido.svg" alt="" class="myFav">
+                    <p>"Guarda tu primer GIFO en Favoritos para que se muestre aqui!"</p>
+                </div>
+                
+            <div id="fav_Gif"></div>
         </section>
 
 
         <section id="trending" class="day-modeTrending">
-            <div class="trendinginfo">
+            <div class="trendinginfo" id="trendinginfo">
                 <h2>Trending GIFOS</h2>
                 <p>Mira los <span class="gifodown">últimos</span> GIFOS de nuestra comunidad.</p>
-                <div class="trending_gif_display">
-                    <div id="trending_gif" class="trending_gif"></div>
+                <div class="trending_gif" id = "gifTrendingCtn">
                 </div>
             </div>
             

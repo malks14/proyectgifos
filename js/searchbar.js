@@ -5,7 +5,7 @@ const trendingEl = document.getElementById('searchResults')
 const seatchBtn = document.getElementById('searchBtn');
 const btnMore = document.getElementById('btnMore')
 let limitSearch = 24;
-let offsetSearch = 12;
+let offsetSearch = 0;
 
 function search() {
     async function newsSearch(q) {
@@ -21,12 +21,13 @@ function search() {
        
      
 
-        for (i = 0; i < 24 + offsetSearch; i++) {
+        for (i = 0; i < limitSearch + offsetSearch; i++) {
          
             let img = document.createElement("img");
             img.setAttribute("src", json.data[i].images.fixed_width.url);
             img.setAttribute("class", "display_search");
             trendingEl.appendChild(img);
+           
         }
 
         
@@ -37,6 +38,10 @@ function search() {
     
 }
 
+function remoChild (img) {
+    trendingEl.removeChild(img);
+        
+}
 seatchBtn.addEventListener('click', (e)=>{
     e.preventDefault();
     const q = searchInput.value;
@@ -44,6 +49,8 @@ seatchBtn.addEventListener('click', (e)=>{
     search_term.innerHTML = q;
     search();
     showButton();
+    remoChild()
+    
    
 });
 
@@ -51,8 +58,8 @@ seatchBtn.addEventListener('click', (e)=>{
 
 searchForm.addEventListener('keyup', (e)=> {
     e.preventDefault()
-    crossSugg();
-    
+     //TAREAponer condicion para que no se modifique
+     crossSugg()
     
   
     if (event.which === 13 || event.keyCode == 13) {
@@ -62,9 +69,11 @@ searchForm.addEventListener('keyup', (e)=> {
         search();
         showButton();
     }
-    
+    remoChild()
     
 })
+
+
 
 function showButton() {
     if (searchInput.value != "") {
@@ -73,6 +82,7 @@ function showButton() {
 }
 
 function crossSugg(){
+ 
     suggCross.classList.toggle('suggCross');
     seatchBtn.classList.toggle('hideCross');
 }
@@ -80,6 +90,7 @@ function crossSugg(){
 btnMore.addEventListener('click', (e) => {
     e.preventDefault()
     limitSearch += 8;
+    offsetSearch += 12;
     if (limitSearch >= 40) {
         btnMore.classList.remove('btnDisplay')
     }

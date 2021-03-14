@@ -1,11 +1,44 @@
 //Trending Gif
-let limit = 3;
+let limit = 20;
 let offset = 0;
 const apikey = 'ndufihd3YVOMrmoIEogAJJ2vZ8Ysk9mK';
 
 const gifTrendingCtn = document.getElementById('gifTrendingCtn');
 const trendinginfo = document.getElementById('trendinginfo');
+const fav_Gif = document.getElementById('fav_Gif');
+const body = document.getElementById("body");
+const btnR = document.getElementById('arrowRight');
+const btnL = document.getElementById('arrowLeft');
+const hiddenGif = document.getElementById('hiddenFav');
 
+
+
+//parte favoritos
+
+let favArray =  [];
+const addToFav = (url) => {
+    let obj = {
+        
+        url: url
+    }
+   
+    favArray.push(obj);
+    localStorage.setItem("gif", JSON.stringify(favArray));
+
+    
+    favArray = JSON.parse(localStorage.getItem("gif"));
+    
+        
+        let img_gif = document.createElement('img');
+        img_gif.setAttribute("src", url)
+        fav_Gif.appendChild(img_gif);
+    
+}
+// if (favArray == null) {
+//     hiddenGif.style.visibility = "visible";
+// } else {
+//     hiddenGif.style.visibility = "hidden";
+// }
 
 
 async function newsSearch() {
@@ -21,6 +54,7 @@ info.then(json => {
     console.log(json)
     for (i = 0; i < limit; i++) {
         let divmouse = document.createElement("div");
+        divmouse.setAttribute("class", "divCtn")
         
           
         let img = document.createElement("img");
@@ -28,36 +62,70 @@ info.then(json => {
         img.setAttribute("title", json.data[i].title)
         img.setAttribute("class", "trending_gif");
         img.setAttribute("class", "display_gif");
+        expandGif(img)
+
+  
         
         divmouse.appendChild(img);
         gifTrendingCtn.appendChild(divmouse);
 
-        if(screen.width >= 769) {
+        
             let divCards = document.createElement("div");
             let dwnBtn = document.createElement("img");
             let sizeBtn = document.createElement("img");
-            let likeBtn = document.createElement("i");
-            let title = document.createElement("p")
-            let user = document.createElement("p")
+            let likeBtn = document.createElement("img");
+            let title = document.createElement("h4")
+            let userName = document.createElement("h4")
 
             divCards.setAttribute("class", "divCards");
+       
 
+            title.textContent =json.data[i].title
             title.setAttribute("class", "title");
-            user.setAttribute("class", "title");
 
-            likeBtn.setAttribute("class", "far fa-heart")
+            userName.textContent = json.data[i].username;
+            userName.setAttribute("class", "user");
+
+            likeBtn.setAttribute("src", "/assets/icon-fav.svg")
+
+          
+            
+
+            likeBtn.addEventListener('click', () => {
+                addToFav(img.src);
+                
+                
+            })
+           
             
 
             dwnBtn.setAttribute("class", "dwnBtn");
             dwnBtn.setAttribute("src", "/assets/icon-download.svg");
+            dwnBtn.addEventListener("click", async function () {
+                let a = document.createElement("a");
+                let response = await fetch(img.src);
+                let gif = await response.blob();
+                a.download = title.textContent;
+                a.href = window.URL.createObjectURL(gif);
+                a.dataset.downloadurl = [
+                  "application/octet-stream",
+                  a.download,
+                  a.href,
+                ].join(":");
+                a.click();
+              });
 
-            sizeBtn.setAttribute("src", "/assets/icon-max-normal.svg")
+            
+
+            sizeBtn.setAttribute("src", "/assets/icon-max-normal.svg");
+            sizeBtn.setAttribute("class", "sizebtn");
+            expandGif(sizeBtn, json.data[i].images.original.url, json.data[i].title, json.data[i].username);
 
             divCards.appendChild(likeBtn);
             divCards.appendChild(dwnBtn);
             divCards.appendChild(sizeBtn);
             divCards.appendChild(title);
-            divCards.appendChild(user);
+            divCards.appendChild(userName);
             divCards.style.visibility = "hidden";
 
             divmouse.appendChild(divCards);
@@ -78,32 +146,25 @@ info.then(json => {
                 dwnBtn.src = "/assets/icon-download.svg";
             });
 
-            sizeBtn.addEventListener("mouseover", () => {
-                fullSize.src = "/assets/icon-max-hover.svg";
-            });
-    
-            sizeBtn.addEventListener("mouseout", () => {
-                fullSize.src = "/assets/icon-max-normal.svg";
-            });
-            
-        }
+        
+        
         
     }
-    let btnR = document.createElement("button");
-    btnR.setAttribute("id", "arrowRight")
-    btnR.setAttribute("class", "fas fa-chevron-right");
-    gifTrendingCtn.appendChild(btnR);
+ 
 
-    btnR.addEventListener("click", function () {
-        if (screen.width > 1280) {
-            document.getElementById("gifTrendingCtn").scrollLeft += 1158;
-        }
-    });
-    
+ 
+ 
 }).catch(err => {
     console.log("error", err);
 })
 
+btnR.addEventListener('click', () => {
+    gifTrendingCtn.scrollLeft += 400;
+})
+
+btnL.addEventListener('click', () => {
+    gifTrendingCtn.scrollLeft -= 400;
+}) 
 
 
 //Trending Reactions
@@ -121,7 +182,7 @@ fetch(pathTerm).then(function(res) {
     let contador = 0;
     json.data.slice(0,5).forEach(function(obj) {
         
-        console.log(json.data.join(", "))
+        
         const title = obj
         if (contador <= 3){
         resultado += `<p class="categories">${title},</p>`
@@ -138,3 +199,90 @@ fetch(pathTerm).then(function(res) {
     console.log(err.message)
 });
 
+
+
+
+
+//Funcion agrandar gif
+function expandGif(prueba, url, title, user) {
+    prueba.addEventListener('click', () => {
+       let imgBg = document.createElement("div");
+       imgBg.setAttribute("id", "imgBg");
+       imgBg.style.position = "fixed";
+       imgBg.style.background = "#fff"; 
+       imgBg.style.width = "100%";
+       imgBg.style.height = "100%";
+       imgBg.style.zIndex= "10";
+       imgBg.style.top = "0";
+       body.appendChild(imgBg);
+
+
+      let imgGif = document.createElement("img");
+      imgGif.setAttribute("src", url); 
+      
+      
+      imgGif.style.position = "fixed";
+      imgGif.style.width = "30%";
+      imgGif.style.marginLeft = "500px";
+      imgGif.style.marginTop = "200px"
+      imgGif.style.zIndex = "12";   
+      imgBg.appendChild(imgGif);
+
+      let cross = document.createElement("button");
+      cross.setAttribute("class", "fas fa-times suggCross");
+      cross.style.paddingLeft = "1000px"
+      cross.style.position = "fixed";
+      cross.style.zIndex = "11"; 
+      imgBg.appendChild(cross);  
+      cross.addEventListener('click', () => {
+          imgBg.style.visibility = "hidden";
+      })
+
+      let btnR = document.createElement("button");
+      btnR.setAttribute("id", "arrowRight")
+      btnR.setAttribute("class", "fas fa-chevron-right");
+      btnR.style.zIndex = "11";
+      imgBg.appendChild(btnR);
+      
+      let btnL = document.createElement("button");
+      btnL.setAttribute("id", "arrowRight")
+      btnL.setAttribute("class", "fas fa-chevron-left");
+      btnL.style.zIndex = "11";
+      imgBg.appendChild(btnL);  
+
+      let titleExp = document.createElement("p");
+      titleExp.textContent = title;
+      titleExp.style.zIndex = "11";
+      titleExp.style.color = "#000";
+      titleExp.style.fontSize = "16px"
+      imgBg.appendChild(titleExp);
+
+      let userExp = document.createElement("p");
+      
+      userExp.style.zIndex = "11";
+      userExp.style.color = "#000";
+      userExp.style.fontSize = "16px";
+      imgBg.appendChild(userExp);
+
+      if ( userExp == undefined) {
+        userExp.textContent = "Usuario anonimo"
+      } else {
+        userExp.textContent = user;
+      }
+
+      let likeExp = document.createElement("button");
+      likeExp.setAttribute("class", "fas fa-heart likeExp");
+      
+      
+      imgBg.appendChild(likeExp);
+
+      let dwnExp = document.createElement("button");
+      dwnExp.setAttribute("class", "fas fa-download dwnExp");
+      dwnExp.style.zIndex = "11";
+      imgBg.appendChild(dwnExp);
+
+
+    })
+
+}
+//funcion fav

@@ -66,15 +66,19 @@
 
     @media (min-width: 376px) {
         width: 100%;
+    
     }
 }
 
 .trending_gif {
    display: flex;
    overflow: scroll;
-
+   white-space: nowrap;
+ 
    @media (min-width: 376px) {
-    width: 100%;
+    width: 85%;
+    margin: auto;
+ 
    }
 }
 
@@ -84,15 +88,18 @@
     width: 243px;
     margin-left: 15px;
     margin-top: 25px;
+    
 
     @media (min-width: 769px) {
         height: 275px;
         width: 357px;
+        
     }
 }
 
 
-#arrowRight {
+#arrowRight,
+#arrowLeft {
     background-color: none;
     border: 1px solid #572EE5;
     color: #572EE5;
@@ -101,9 +108,22 @@
     width: 40px;
     outline: none;
     margin: auto;
-}
 
+    @media (max-width: 769px) {
+        display: none;
+    }
+}
+#arrowLeft:hover,
 #arrowRight:hover {
     background-color: #572EE5;
     color: #fff;
+}
+
+.divCtn {
+    height: 275px;
+    
+}
+
+.ctnTre {
+    display: flex;
 }

@@ -104,6 +104,7 @@
 
 
 .stepbystep {
+    display: inline-block;
     border: #572EE5 1px solid;
     border-radius: 50%;
     background-color: transparent;
@@ -119,13 +120,16 @@
 }
 
 #snap:hover,
-.stepbystep:hover {
+.stepbystep:hover,
+.hoverStep {
     background-color: #572EE5;
     color: #fff;
 }
 
+
+
 .textBtn {
-    display: block;
+    
     text-align: center;
     line-height: 1px;
 }

@@ -63,7 +63,8 @@ function sugg() {
                     searchForm.style.height = "50px";
                     document.getElementById("search-input").value = data.data[i].name;
                     document.getElementById("searchTerm").textContent = data.data[i].name;
-                    search()
+                    search();
+                    showButton();
                     
                   });
         
