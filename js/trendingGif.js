@@ -2,10 +2,10 @@
 let limit = 20;
 let offset = 0;
 const apikey = 'ndufihd3YVOMrmoIEogAJJ2vZ8Ysk9mK';
-
+const favCtn = document.getElementById('favCtn');
 const gifTrendingCtn = document.getElementById('gifTrendingCtn');
 const trendinginfo = document.getElementById('trendinginfo');
-const fav_Gif = document.getElementById('fav_Gif');
+let fav_Gif = document.getElementById('fav_Gif');
 const body = document.getElementById("body");
 const btnR = document.getElementById('arrowRight');
 const btnL = document.getElementById('arrowLeft');
@@ -14,31 +14,128 @@ const hiddenGif = document.getElementById('hiddenFav');
 
 
 //parte favoritos
-
 let favArray =  [];
-const addToFav = (url) => {
-    let obj = {
-        
-        url: url
-    }
+function asignarFav(elemento,storage,id){
    
-    favArray.push(obj);
-    localStorage.setItem("gif", JSON.stringify(favArray));
-
-    
-    favArray = JSON.parse(localStorage.getItem("gif"));
-    
+    elemento.addEventListener("click",e=>{
+    e.preventDefault();
+     
+      let objGif ={
         
-        let img_gif = document.createElement('img');
-        img_gif.setAttribute("src", url)
-        fav_Gif.appendChild(img_gif);
-    
+        gif: storage,
+        id:id
+        }
+        let getArr = JSON.parse(localStorage.getItem("gif")|| "[]");
+          const favSelected = getArr.find(e=> e.id ===objGif.id);
+
+        if(getArr[0]===undefined || getArr[0]===null){
+          
+          console.log("no hay nada");
+          favArray.push(objGif);
+          
+          console.log(favArray);
+          localStorage.setItem("gif",JSON.stringify(favArray));
+          asignarFavs();
+        }else{
+   
+            if(
+       
+                favArray.id == favSelected
+            ){
+              console.log("agregar")
+              favArray.push(objGif)
+              localStorage.setItem("gif",JSON.stringify(favArray));
+              asignarFavs();
+            }else{
+              console.log("ya esta")
+            }
+          
+        }
+
+        })
+       
+
 }
-// if (favArray == null) {
-//     hiddenGif.style.visibility = "visible";
-// } else {
-//     hiddenGif.style.visibility = "hidden";
-// }
+
+function asignarFavs(){
+
+fav_Gif.innerHTML = '';
+favArray = JSON.parse(localStorage.getItem("gif"));
+if(favArray == null) {
+    favArray = [];
+}else{
+    favCtn.style.visibility = "hidden";
+ for(i = 0; i< favArray.length;i++) {
+    let divGifM = document.createElement("div");
+    divGifM.setAttribute("class", "divGifMCtn")
+
+    let gifimg = document.createElement('img');
+    gifimg.setAttribute("class", "img_gif")
+    gifimg.src = `${favArray[i].gif}`;
+    fav_Gif.appendChild(gifimg);
+
+    divGifM.appendChild(gifimg);
+    fav_Gif.appendChild(divGifM);
+
+    let divCards = document.createElement("div");
+
+    let divBtnFav = document.createElement("div");
+   
+    let dwnBtnFav = document.createElement("img");
+    let sizeBtnFav = document.createElement("img");
+    let likeBtnFav = document.createElement("img");
+    let title = document.createElement("h4")
+    let userName = document.createElement("h4")
+
+    likeBtnFav.setAttribute("src", "/assets/icon-fav.svg")
+    likeBtnFav.setAttribute("class", "lkeBtnFavs")
+    gifimg.id = `${favArray[i].id}`;
+    likeBtnFav.addEventListener('click', () => {
+        eliminarFavoritos(gifimg.id)
+    })
+    
+    dwnBtnFav.setAttribute("src", "/assets/icon-download.svg");
+
+    sizeBtnFav.setAttribute("src", "/assets/icon-max-normal.svg");
+
+    divCards.setAttribute("class", "divCardsFav");
+    divCards.style.visibility = "hidden";
+    divGifM.appendChild(divCards);
+    
+    divBtnFav.appendChild(likeBtnFav)
+    divBtnFav.appendChild(dwnBtnFav);
+    divBtnFav.appendChild(sizeBtnFav);
+
+    divCards.appendChild(divBtnFav)
+
+
+    divGifM.addEventListener("mouseover", () => {
+        divCards.style.visibility = "visible";
+        divBtnFav.style.visibility = "visible";
+               
+    })
+    divGifM.addEventListener("mouseout", () => {
+        divCards.style.visibility = "hidden";
+        divBtnFav.style.visibility = "hidden";
+    });
+}}}
+
+
+
+function obtenerListadoFavoritos() {
+    return JSON.parse(localStorage.getItem('gif'));
+}
+let listado_favoritos = obtenerListadoFavoritos();
+
+function eliminarFavoritos(idGifFavorito) {
+    let indiceFavorito = listado_favoritos.indexOf(idGifFavorito);
+    listado_favoritos.splice(indiceFavorito, 1);
+    localStorage.setItem('gif', JSON.stringify(listado_favoritos));
+    asignarFavs();
+}
+
+//parte favoritos
+
 
 
 async function newsSearch() {
@@ -51,7 +148,7 @@ async function newsSearch() {
          
 let info = newsSearch()
 info.then(json => {
-    console.log(json)
+    
     for (i = 0; i < limit; i++) {
         let divmouse = document.createElement("div");
         divmouse.setAttribute("class", "divCtn")
@@ -73,7 +170,7 @@ info.then(json => {
             let divCards = document.createElement("div");
             let dwnBtn = document.createElement("img");
             let sizeBtn = document.createElement("img");
-            let likeBtn = document.createElement("img");
+            
             let title = document.createElement("h4")
             let userName = document.createElement("h4")
 
@@ -85,18 +182,12 @@ info.then(json => {
 
             userName.textContent = json.data[i].username;
             userName.setAttribute("class", "user");
-
+            
+            let likeBtn = document.createElement("img");
             likeBtn.setAttribute("src", "/assets/icon-fav.svg")
 
-          
-            
-
-            likeBtn.addEventListener('click', () => {
-                addToFav(img.src);
-                
-                
-            })
-           
+            let id = json.data[i].id;
+            asignarFav(likeBtn, img.src, id);
             
 
             dwnBtn.setAttribute("class", "dwnBtn");
@@ -151,7 +242,7 @@ info.then(json => {
         
     }
  
-
+    asignarFavs();
  
  
 }).catch(err => {
@@ -196,7 +287,7 @@ fetch(pathTerm).then(function(res) {
 
     trendingEl.innerHTML = resultado
 }).catch(function(err) {
-    console.log(err.message)
+    console.log(err)
 });
 
 
@@ -238,13 +329,13 @@ function expandGif(prueba, url, title, user) {
           imgBg.style.visibility = "hidden";
       })
 
-      let btnR = document.createElement("button");
+      
       btnR.setAttribute("id", "arrowRight")
       btnR.setAttribute("class", "fas fa-chevron-right");
       btnR.style.zIndex = "11";
       imgBg.appendChild(btnR);
       
-      let btnL = document.createElement("button");
+      
       btnL.setAttribute("id", "arrowRight")
       btnL.setAttribute("class", "fas fa-chevron-left");
       btnL.style.zIndex = "11";
@@ -285,4 +376,3 @@ function expandGif(prueba, url, title, user) {
     })
 
 }
-//funcion fav

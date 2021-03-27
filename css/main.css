@@ -835,15 +835,102 @@ nav {
   margin-top: 20px;
   margin-left: 620px; }
 
-#snap {
+.btnVideo {
+  display: flex;
+  justify-content: center; }
+
+#snap,
+#record,
+#endVideo,
+#upload {
   background-color: transparent;
   border: #572EE5 1px solid;
   border-radius: 20px;
   color: #572EE5;
   font-size: 13px;
   padding: 10px;
-  margin-left: 660px;
-  margin-top: 20px; }
+  margin-top: 20px;
+  cursor: pointer; }
+
+#record,
+#endVideo,
+#upload,
+#snapAgain {
+  display: none;
+  cursor: pointer; }
+
+.captureVideo {
+  position: relative;
+  top: -100px;
+  left: -31px; }
+
+#tiempo-repetir {
+  font-family: 'Montserrat-Bold', sans-serif;
+  font-size: 15px;
+  color: #572EE5;
+  letter-spacing: 0;
+  text-align: end;
+  line-height: 22px;
+  position: relative;
+  top: -40px; }
+
+#snapAgain {
+  background: none;
+  color: #572EE5;
+  position: relative;
+  top: -115px;
+  left: 1000px;
+  font-size: 13px;
+  color: #572EE5;
+  border: none;
+  outline: none;
+  cursor: pointer; }
+  #snapAgain:hover {
+    border-bottom: 2px solid #5ED7C6; }
+
+#savedGif {
+  display: none; }
+
+.purple_screen {
+  opacity: 0.6;
+  background: #572EE5;
+  height: 346px;
+  width: 480px;
+  position: relative;
+  top: -430px;
+  width: 517px;
+  left: 86px; }
+
+.text_screen {
+  font-size: 15px;
+  color: #FFF;
+  text-align: center;
+  position: relative;
+  top: 190px; }
+
+.spinner {
+  position: relative;
+  top: 120px;
+  left: 250px; }
+
+#savedGif {
+  display: none;
+  width: 515px;
+  position: relative;
+  top: -84px;
+  left: 87px; }
+
+.btnCtnP {
+  position: relative;
+  left: 420px; }
+
+.lnkBtn {
+  margin-left: 5px; }
+  .lnkBtn:hover {
+    background-image: url("/assets/icon-link-hover.svg"); }
+
+.dwnBtnP:hover {
+  background-image: url("/assets/icon-download-hover.svg"); }
 
 .titleGif {
   width: 100%;
@@ -870,5 +957,29 @@ nav {
 @media (max-width: 768px) {
   .myFav {
     display: none; } }
+
+.img_gif {
+  height: 200px;
+  width: 260px;
+  padding-left: 30px; }
+
+.divGifMCtn {
+  display: inline-block; }
+
+.divCardsFav {
+  background: #572ee5;
+  box-shadow: 0 0 5px #572ee5;
+  opacity: 0.6;
+  width: 230px;
+  height: 200px;
+  position: relative;
+  left: 30px;
+  top: -204px; }
+  @media (max-width: 768px) {
+    .divCardsFav {
+      display: none; } }
+
+.lkeBtnFavs {
+  background-image: url("/assets/icon-fav-active.svg") no-repeat; }
 
 /*# sourceMappingURL=main.css.map */

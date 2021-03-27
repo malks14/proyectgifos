@@ -1,23 +1,51 @@
 let videoCam = document.getElementById('snap');
+let captureVideo1 = document.getElementById('captureVideo1');
 let step1 = document.getElementById('step1');
 let step2 = document.getElementById('step2');
 let start = document.getElementById('start');
 let detail = document.getElementById('detail');
 let center = document.getElementById('greenBox');
 let division = document.getElementById('division');
+let recordBtn = document.getElementById('record');
+let endVideo = document.getElementById('endVideo');
+let upload = document.getElementById('upload');
+let snapAgain = document.getElementById('snapAgain');
+let savedGif = document.getElementById('savedGif');
+let ctn_my_gif = document.getElementById('ctn_my_gifs');
+let recorder;
+let time;
+let blob;
+
+let myGifsArray = [];
+let myGifosString = localStorage.getItem("myGifos");
+
+
+let form = new FormData();
+
+//purplescreen
+let purpleScreen = document.createElement("div");
+let btnCtnP = document.createElement("div");
+let textPurple = document.createElement("p");
+let spinner = document.createElement("img");
+let dwnBtnP = document.createElement("img");
+let lnkBtn = document.createElement("img");
+
+
+//cronometro
+let h = 0;
+let m = 0;
+let s = -1;
 
 let tiempoRepetir = document.createElement("h6");
-center.appendChild(tiempoRepetir);
+division.appendChild(tiempoRepetir);
 tiempoRepetir.setAttribute("id", "tiempo-repetir");
 
 function cronometrar() {
-    h = 0;
-    m = 0;
-    s = -1;
+   
     tiempoRepetir.innerHTML = "00:00:00";
   
     escribir();
-    id = setInterval(escribir, 1000);
+    time = setInterval(escribir, 1000);
   }
   function escribir() {
     var hAux, mAux, sAux;
@@ -53,46 +81,37 @@ function cronometrar() {
   }
 
 
-videoCam.addEventListener('click', (startVideo) =>  {
+videoCam.addEventListener('click', () =>  {
     videoCam.style.visibility = "hidden";
     step1.classList.add("hoverStep");
     start.innerHTML = "Nos das acceso a tu cámara?";
     detail.innerHTML = "El acceso a tu camara será válido sólo <br /> por el tiempo en el que estés creando el GIFO.";
-    startVideo();
-    
-    
+    record.style.display = "block"
 
-    let canvas = document.createElement('canvas');
-    videoCam.appendChild(canvas);
+    startVideo();
 })
 
 function startVideo() {
   navigator.mediaDevices.getUserMedia({
-      audio: false,
-      video: {
-          height: { max : 480},
-      },
+    audio: false,
+    video: {
+        height: { max : 480},
+    },
   })
   .then(function (stream){
     start.style.display = "none";
     detail.style.display = "none";
-    let captureVideo = document.createElement('video');
-    center.appendChild(captureVideo);
-    captureVideo.setAttribute("id", "videoGif");
-    captureVideo.srcObject = stream;
-    captureVideo.play();
+    
+    
+    
+    captureVideo1.srcObject = stream;
+    captureVideo1.style.width = "716px"
+    captureVideo1.style.height = "346px"
+
+    captureVideo1.play();
     videoCam.style.display = "none";
     tiempoRepetir.style.visibility = "visible";
-
-    let record = document.createElement("h4");
-    division.appendChild(record);
-    record.setAttribute("id", "btn-record");
-    record.setAttribute("class", "start");
-    record.textContent = "GRABAR";
-    step1.classList.remove("hover");
-    step2.classList.add("hover");
-
-    record.addEventListener("click", () => {
+    
         recorder = RecordRTC(stream, {
             type : "gif",
             frameRate : 1,
@@ -104,88 +123,153 @@ function startVideo() {
             }
         })
 
-    })
+        
     
-    cronometrar();
-    recorder.startRecording();
-    record.style.display = "none";
-    let stopRecord = document.createElement("h4");
-    division.appendChild(stopRecord);
-    stopRecord.setAttribute("id", "btn-stop");
-    stopRecord.setAttribute("class", "start");
-    stopRecord.textContent = "FINALIZAR";
-    stopRecord.addEventListener("click", ejecuta);
-    
-    
+  }).catch(err => {
+    console.log("error", err);
+
+})
+}
+
+recordBtn.addEventListener('click', () => {
+  recorder.startRecording();
+  recordBtn.style.display = "none";
+  snapAgain.style.display = "none";
+  endVideo.style.display = "block";
+  step1.classList.remove("hoverStep");
+  step2.classList.add("hoverStep");
+  cronometrar();
+ 
+
+})
+
+endVideo.addEventListener('click', () => {
+  endVideo.style.display = "none";
+  upload.style.display = "block";
+  snapAgain.style.display = "block";
+  tiempoRepetir.style.display = "none";
+  recorder.stopRecording(() => {
+    blob = recorder.getBlob();
+    savedGif.src = URL.createObjectURL(blob);
+    savedGif.style.display = "block";
+    form.append('file', recorder.getBlob(), "myGif.gif")
+    console.log(form.get('file'))
+    captureVideo1.style.display = "none";
+
+  });
+
+  clearInterval(time)
+  h = 0;
+  m = 0;
+  s = -1;
+  tiempoRepetir.innerHTML = "00:00:00";
+
+})
+
+snapAgain.addEventListener('click', () => {
+  upload.style.display = "none";
+  recordBtn.style.display = "block";
+  recorder.clearRecordedData();
+  savedGif.style.display = "none";
+  captureVideo1.style.display = "block";
+  tiempoRepetir.style.display = "block";
+  snapAgain.style.display = "none";
+  
+  startVideo();
+ 
+})
 
 
-    
+upload.addEventListener('click', () => {
+  upload.style.display = "none";
+  step3.classList.add("hoverStep");
+  step2.classList.remove("hoverStep");
+  snapAgain.style.display = "none";
+  
+  purpleScreen.setAttribute("class", "purple_screen")
+  center.appendChild(purpleScreen)
+
+  
+  textPurple.setAttribute("class", "text_screen")
+  textPurple.textContent = "Estamos subiendo tu GIFO"
+  purpleScreen.appendChild(textPurple);
+
+  
+  spinner.setAttribute("src", "./assets/loader.svg");
+  spinner.setAttribute("class", "spinner")
+  purpleScreen.appendChild(spinner);
+  
+  subirGif();
+})
+
+
+
+async function subirGif(){
+
+
+  await fetch(`https://upload.giphy.com/v1/gifs?api_key=${apikey}`,{
+          method:'POST',
+          body:form,
+  })
+  .then((res)=> res.json())
+  .then(subirsubir=>{
+    console.log(subirsubir)
+       let myGif = subirsubir.data.id;
+
+        spinner.setAttribute("src", "./assets/ok.svg");
+        textPurple.textContent = "GIFO subido con exito!"
+
+       
+      dwnBtnP.setAttribute("src", "/assets/icon-download.svg");
+      lnkBtn.setAttribute("src", "/assets/icon-link-normal.svg");
+      btnCtnP.setAttribute("class", "btnCtnP");
+      dwnBtnP.setAttribute("class", "dwnBtnP");
+      lnkBtn.setAttribute("class", "lnkBtn");
+
+       btnCtnP.appendChild(dwnBtnP);
+       btnCtnP.appendChild(lnkBtn);
+        purpleScreen.appendChild(btnCtnP);
+
+
+
+       if (myGifosString == null) {
+         myGifsArray = [];
+       } else {
+         myGifsArray = JSON.parse(myGifosString);
+       }
+       myGifsArray.push(myGif)
+       myGifosString = JSON.stringify(myGifsArray)
+       localStorage.setItem("myGifos", myGifosString);
+    // localStorage.setItem("misGifos",JSON.stringify(myGifs));
+      myGifsArray = JSON.parse(myGifosString);
+      // let urlMyGifs = `https://api.giphy.com/v1/gifs?ids=${myGifsArray.toString()}&api_key=${apikey}`
+    // myGifs = JSON.parse(localStorage.getItem("misGifos"));
+      // let divgifs = document.createElement('div')
+      // ctn_my_gif.appendChild(divgifs);
+      let my_gif_create = document.createElement('img');
+      // let gifURL = `https://media.giphy.com/media/${myGif}/giphy.gif`
+      my_gif_create.setAttribute("src", gifURL)
+      console.log(my_gif_create)
+      ctn_my_gif.appendChild(my_gif_create);
+   
+  })
+  .catch((err)=>{
+          console.log(err);
   })
 }
 
-function ejecuta() {
-    finalizarGrabacion(stopRecording);
-  }
-  
-function finalizarGrabacion(callback) {
-    recorder.stopRecording(callback);
-  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) { // el primero busca si hay mediadevices disponibles lo segundo es lo que hace pedir permiso?
-//     navigator.mediaDevices.getUserMedia({video: true}).then((stream) => { //getusermedia es el tipo de media que se precisa
-//         //.then  (callback function)es porque es asincrono stream proque es lo que se busca del media object
-//         video.srcObject = stream; //el stream es del .then y 
-//         video.play();//hace que se ponga en el sitio
-//     });
-// }
-
-// //funcion foto
-// video.addEventListener('click', () => {
-//     context.drawImage(video, 0,0,640,480);//video porque queremos que saque como un screen del video, lo otro es coordenadas (0,0)
-// })
-
-
-
-// let canvas = document.querySelector("#canvas");
-// let context = canvas.getContext('2d');//donde se va a poner la foto y en 2 dimensiones
-// let video = document.querySelector("#video");
-
-// //drawimage porque es un metodo que pide que se dibuje una imagen, en este caso del video, al canvas(context)
-
-
-
-// //funcion extra para ver devices
-// // navigator.mediaDevices.enumerateDevices().then((devices) => {
-// //     console.log(devices)
-// // })
+async function pruebax(myGif) {
+  dwnBtnP.addEventListener("click", async function () {
+    let a = document.createElement("a");
+    let response = await fetch(`https:media.giphy.com/media/${myGif}/giphy.gif`);
+    let gif = await response.blob();
+    a.href = window.URL.createObjectURL(gif);
+    a.dataset.downloadurl = [
+      "application/octet-stream",
+      a.download,
+      a.href,
+    ].join(":");
+    a.click();
+  });
+}

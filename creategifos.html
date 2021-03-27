@@ -48,8 +48,9 @@
                                 <div class="textBox">
                                     <h2 id="start">Aquí<span class="wordDown"> podrás</span> crear tus propios <span class="wordColor">GIFOS</span></h2>
                                     <p id="detail">Crea tu GIFO en sólo 3 pasos! <br> (sólo necesitas una cámara para grabar un video)</p>
-                                    
-                                </div>                              
+                                </div>  
+                                <video id="captureVideo1" class="captureVideo"></video>     
+                                <img id="savedGif"></img>                       
                             </div>
                     </div>
                 </div> 
@@ -64,7 +65,13 @@
             </div>
 
             <div class="borderpurple" id="division"></div>
-            <button id="snap">COMENZAR</button>
+            <div class="btnVideo">
+                <button id="snap">COMENZAR</button>
+                <button id="record">GRABAR</button>
+                <button id="endVideo">FINALIZAR</button>
+                <button id="upload">SUBIR GIFO</button>
+            </div>
+            <button id="snapAgain">REPETIR CAPTURA</button>
             <div class="film">
                 <img src="assets/pelicula.svg" alt="" class="filmDay">
                 <img src="assets/pelicula-modo-noc.svg" alt="" class="filmNight">

@@ -2,10 +2,11 @@
 const searchForm = document.getElementById("search-form");
 const searchInput = document.getElementById('search-input');
 const trendingEl = document.getElementById('searchResults')
-const seatchBtn = document.getElementById('searchBtn');
+let seatchBtn = document.getElementById('searchBtn');
 const btnMore = document.getElementById('btnMore')
 let limitSearch = 24;
 let offsetSearch = 0;
+let valueInput = "";
 
 function search() {
     async function newsSearch(q) {
@@ -38,10 +39,7 @@ function search() {
     
 }
 
-function remoChild (img) {
-    trendingEl.removeChild(img);
-        
-}
+
 seatchBtn.addEventListener('click', (e)=>{
     e.preventDefault();
     const q = searchInput.value;
@@ -49,7 +47,7 @@ seatchBtn.addEventListener('click', (e)=>{
     search_term.innerHTML = q;
     search();
     showButton();
-    remoChild()
+    
     
    
 });
@@ -59,8 +57,8 @@ seatchBtn.addEventListener('click', (e)=>{
 searchForm.addEventListener('keyup', (e)=> {
     e.preventDefault()
      //TAREAponer condicion para que no se modifique
-     crossSugg()
-    
+     
+     
   
     if (event.which === 13 || event.keyCode == 13) {
         const q = searchInput.value;
@@ -69,11 +67,24 @@ searchForm.addEventListener('keyup', (e)=> {
         search();
         showButton();
     }
-    remoChild()
+    
     
 })
 
+valueInput = searchInput.value;
+searchInput.addEventListener('keyup', () => {
+    showCross();
+})
 
+function showCross() {
+    if (valueInput.length >= 1) {
+        // suggCross.classList.remove("hideCross");
+        seatchBtn.style.display = "none";
+      } else {
+        // suggCross.classList.add("hideCross");
+        seatchBtn.style.display = "block";
+    }
+}
 
 function showButton() {
     if (searchInput.value != "") {
@@ -81,11 +92,8 @@ function showButton() {
     }
 }
 
-function crossSugg(){
- 
-    suggCross.classList.toggle('suggCross');
-    seatchBtn.classList.toggle('hideCross');
-}
+
+
 
 btnMore.addEventListener('click', (e) => {
     e.preventDefault()

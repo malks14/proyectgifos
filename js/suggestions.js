@@ -70,7 +70,7 @@ function sugg() {
         
             }
             
-        
+            
        
     }).catch(err => {
         console.log("error", err);
