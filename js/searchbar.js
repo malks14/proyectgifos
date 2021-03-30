@@ -7,6 +7,7 @@ const btnMore = document.getElementById('btnMore')
 let limitSearch = 24;
 let offsetSearch = 0;
 let valueInput = "";
+let divCtnSearch = document.createElement("div");
 
 function search() {
     async function newsSearch(q) {
@@ -24,10 +25,14 @@ function search() {
 
         for (i = 0; i < limitSearch + offsetSearch; i++) {
          
+            
+            divCtnSearch.setAttribute("class", "divCtnSearch");
+            trendingEl.appendChild(divCtnSearch);
             let img = document.createElement("img");
+            
             img.setAttribute("src", json.data[i].images.fixed_width.url);
             img.setAttribute("class", "display_search");
-            trendingEl.appendChild(img);
+            divCtnSearch.appendChild(img)
            
         }
 
@@ -37,6 +42,7 @@ function search() {
         console.log("error", err);
     })
     
+
 }
 
 
@@ -47,18 +53,19 @@ seatchBtn.addEventListener('click', (e)=>{
     search_term.innerHTML = q;
     search();
     showButton();
-    
-    
-   
+    // cleanSearch(seatchBtn);
+    trendingEl.removeChild(divCtnSearch);
 });
 
 
-
+// function cleanSearch (element) {
+//     element.addEventListener('click', 'keyup', () => {
+//         trendingEl.removeChild(divCtnSearch);
+                
+//     })
+// }
 searchForm.addEventListener('keyup', (e)=> {
-    e.preventDefault()
-     //TAREAponer condicion para que no se modifique
-     
-     
+    e.preventDefault();
   
     if (event.which === 13 || event.keyCode == 13) {
         const q = searchInput.value;
@@ -66,6 +73,8 @@ searchForm.addEventListener('keyup', (e)=> {
         search_term.innerHTML = q;
         search();
         showButton();
+        // cleanSearch(searchForm);
+        trendingEl.removeChild(divCtnSearch);
     }
     
     

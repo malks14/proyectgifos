@@ -211,6 +211,14 @@
     height: 120px;
     width: 156px;
     margin-bottom: 10px;
+
+    @media (min-width: 769px) {
+        column-gap: 40px;
+        margin-left: 30px;
+        height: 200px;
+        width: 260px;
+    }
+
 }
 
 #searchResults {
@@ -219,7 +227,7 @@
     margin-left: 20px;
 
     @media (min-width: 769px) {
-        column-gap: 40px;
+        column-gap: 70px;
       
         margin: auto;
     }
@@ -384,3 +392,10 @@
 //     padding-top: 10px;
 //     height: 0.5px;
 // }
+
+.divCtnSearch {
+    display: inline-block;
+    // width: 240px;
+    // height: 200px;
+}
+
