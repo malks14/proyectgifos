@@ -18,9 +18,14 @@ let blob;
 
 let myGifsArray = [];
 let myGifosString = localStorage.getItem("myGifos");
-
+// let listado_misgifos = obtenerListadoGifsGuardados();
+// function obtenerListadoGifsGuardados() {
+//   return JSON.parse(localStorage.getItem('myGifos'));
+// }
 
 let form = new FormData();
+
+
 
 //purplescreen
 let purpleScreen = document.createElement("div");
@@ -200,6 +205,7 @@ upload.addEventListener('click', () => {
   purpleScreen.appendChild(spinner);
   
   subirGif();
+  
 })
 
 
@@ -237,25 +243,37 @@ async function subirGif(){
        } else {
          myGifsArray = JSON.parse(myGifosString);
        }
+       
        myGifsArray.push(myGif)
        myGifosString = JSON.stringify(myGifsArray)
        localStorage.setItem("myGifos", myGifosString);
-    // localStorage.setItem("misGifos",JSON.stringify(myGifs));
-      myGifsArray = JSON.parse(myGifosString);
-      // let urlMyGifs = `https://api.giphy.com/v1/gifs?ids=${myGifsArray.toString()}&api_key=${apikey}`
-    // myGifs = JSON.parse(localStorage.getItem("misGifos"));
-      // let divgifs = document.createElement('div')
-      // ctn_my_gif.appendChild(divgifs);
-      let my_gif_create = document.createElement('img');
-      // let gifURL = `https://media.giphy.com/media/${myGif}/giphy.gif`
-      my_gif_create.setAttribute("src", gifURL)
-      console.log(my_gif_create)
-      ctn_my_gif.appendChild(my_gif_create);
-   
+    
+      myGifsArray = JSON.parse(myGifosString); 
+
   })
   .catch((err)=>{
           console.log(err);
   })
+  displayMyGifs()
+}
+
+function displayMyGifs() {
+  for (i = 0; i < myGifsArray.length; i++) {
+    let searchId = myGifsArray[i];
+    const pathgifs = `https://api.giphy.com/v1/gifs/?api_key=${apikey}&ids=${searchId}`;
+    fetch(pathgifs)
+    .then((response) => {
+      return response.json();
+    })
+    .then((json) => {
+      console.log(json)
+        let divMygfs = document.createElement("div")
+        ctn_my_gif.appendChild(divMygfs);
+        let imgMyGif = document.createElement('img');
+        imgMyGif.setAttribute("src", json.data.url)
+        divMygfs.appendChild(imgMyGif);
+    })
+  }
 }
 
 
@@ -273,3 +291,5 @@ async function pruebax(myGif) {
     a.click();
   });
 }
+
+

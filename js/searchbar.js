@@ -8,6 +8,7 @@ let limitSearch = 24;
 let offsetSearch = 0;
 let valueInput = "";
 let divCtnSearch = document.createElement("div");
+let search_term = document.getElementById("searchTerm")
 
 function search() {
     async function newsSearch(q) {
@@ -53,29 +54,28 @@ seatchBtn.addEventListener('click', (e)=>{
     search_term.innerHTML = q;
     search();
     showButton();
-    // cleanSearch(seatchBtn);
-    trendingEl.removeChild(divCtnSearch);
+    
+    
 });
 
 
-// function cleanSearch (element) {
-//     element.addEventListener('click', 'keyup', () => {
-//         trendingEl.removeChild(divCtnSearch);
-                
-//     })
-// }
+
 searchForm.addEventListener('keyup', (e)=> {
     e.preventDefault();
   
     if (event.which === 13 || event.keyCode == 13) {
         const q = searchInput.value;
-        let search_term = document.getElementById("searchTerm")
+        
         search_term.innerHTML = q;
         search();
         showButton();
         // cleanSearch(searchForm);
+        
+    } else if (event.which === 8 || event.keyCode == 8) {
         trendingEl.removeChild(divCtnSearch);
+        search_term.style.display = "none";
     }
+
     
     
 })
