@@ -1,2 +1,2 @@
 # proyectgifos
-https://brave-wozniak-b602f5.netlify.app
+https://hardcore-boyd-d4577a.netlify.app/
